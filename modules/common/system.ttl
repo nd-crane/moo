@@ -1,0 +1,212 @@
+@prefix : <https://w3id.org/la3d/ont/system#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix cpannotationschema: <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#> .
+@base <https://w3id.org/la3d/ont/system> .
+
+<https://w3id.org/la3d/ont/system> rdf:type owl:Ontology ;
+                                    owl:versionIRI <https://w3id.org/la3d/ont/system/0.0.1> ;
+                                    <http://creativecommons.org/ns#license> <https://creativecommons.org/licenses/by-nc/4.0/> ;
+                                    <http://purl.org/dc/terms/created> "2021-10-29" ;
+                                    <http://purl.org/dc/terms/creator> <http://orcid.org/0000-0003-4091-6059> ;
+                                    <http://purl.org/dc/terms/description> "Ontology Design Pattern for System-Object-Designed Artifact to be used as a part of the maintenance-system ontology." ;
+                                    vann:preferredNamespacePrefix "la3dsys" ;
+                                    vann:preferredNamespaceUri "https://w3id.org/la3d/ont/system" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://creativecommons.org/ns#license
+<http://creativecommons.org/ns#license> rdf:type owl:AnnotationProperty ;
+                                        <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0003-4091-6059> ;
+                                        <http://purl.org/dc/elements/1.1/date> "2021-10-29T18:23:34Z"^^xsd:dateTime .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+###  http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#extractedFrom
+cpannotationschema:extractedFrom rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/la3d/ont/system#has_part
+:has_part rdf:type owl:ObjectProperty ,
+                   owl:TransitiveProperty ,
+                   owl:ReflexiveProperty ;
+          <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0003-4091-6059> ;
+          <http://purl.org/dc/elements/1.1/date> "2021-10-29T18:45:48Z"^^xsd:dateTime ;
+          skos:definition """A schematic relation between any entities, e.g. 'the human body has a brain as part', '20th century contains year 1923', 'World War II includes the Pearl Harbour event'.
+
+Parthood should assume the basic properties of mereology: transitivity, antisymmetry, and reflexivity (propert Parthood of course misses reflexivity). 
+However, antisymmetry is not supported in OWL2 explicitly, therefore DUL has to adopt one of two patterns:
+1) dropping asymmetry axioms, while granting reflexivity: this means that symmetry is not enforced, but permitted for the case of reflexivity. Of course, in this way we cannot prevent symmetric usages of hasPart;
+2) dropping the reflexivity axiom, and enforce asymmetry: in this case, we would prevent all symmetric usages, but we loose the possibility of enforcing reflexivity, which is commonsensical in parthood.
+In DUL, we adopt pattern #1 for partOf, and pattern #2 for properPartOf, which seems a good approximation: due to the lack of inheritance of property characteristics, each asymmetric hasPropertPart assertion would also be a reflexive hasPart assertion (reflexive reduction design pattern).
+
+Subproperties and restrictions can be used to specialize hasPart for objects, events, etc.""" .
+
+
+###  https://w3id.org/la3d/ont/system#is_described_by
+:is_described_by rdf:type owl:ObjectProperty ;
+                 <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0003-4091-6059> ;
+                 <http://purl.org/dc/elements/1.1/date> "2021-10-29T20:48:27Z"^^xsd:dateTime .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/la3d/ont/system#Component
+:Component rdf:type owl:Class ;
+           rdfs:subClassOf :Designed_Artifact ;
+           <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0003-4091-6059> ;
+           <http://purl.org/dc/elements/1.1/date> "2021-10-29T19:31:54Z"^^xsd:dateTime ;
+           rdfs:label "Component" .
+
+
+###  https://w3id.org/la3d/ont/system#Description
+:Description rdf:type owl:Class ;
+             rdfs:subClassOf :Social_Object ;
+             <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0003-4091-6059> ;
+             <http://purl.org/dc/elements/1.1/date> "2021-10-29T20:45:40Z"^^xsd:dateTime ;
+             skos:definition """A Description is a SocialObject that represents a conceptualization. 
+It can be thought also as a 'descriptive context' that uses or defines concepts in order to create a view on a 'relational context' (cf. Situation) out of a set of data or observations. 
+For example, a Plan is a Description of some actions to be executed by agents in a certain way, with certain parameters; a Diagnosis is a Description that provides an interpretation for a set of observed entities, etc.
+Descriptions 'define' or 'use' concepts, and can be 'satisfied' by situations.""" .
+
+
+###  https://w3id.org/la3d/ont/system#Design
+:Design rdf:type owl:Class ;
+        rdfs:subClassOf :Description ;
+        <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0003-4091-6059> ;
+        <http://purl.org/dc/elements/1.1/date> "2021-10-29T20:45:46Z"^^xsd:dateTime ;
+        skos:definition """A Description of the Situation, in terms of structure and function, held by an Entity for some reason.
+A design is usually accompanied by the rationales behind the construction of the designed Entity (i.e. of the reasons why a design is claimed to be as such). For example, the actual design (a Situation) of a car or of a law is based on both the specification (a Description) of the structure, and the rationales used to construct cars or laws.
+While designs typically describe entities to be constructed, they can also be used to describe 'refunctionalized' entities, or to hypothesize unknown functions. For example, a cradle can be refunctionalized as a flowerpot based on a certain home design.""" .
+
+
+###  https://w3id.org/la3d/ont/system#Designed_Artifact
+:Designed_Artifact rdf:type owl:Class ;
+                   rdfs:subClassOf :Physical_Artifact ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :is_described_by ;
+                                     owl:someValuesFrom :Design
+                                   ] ;
+                   <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0003-4091-6059> ;
+                   <http://purl.org/dc/elements/1.1/date> "2021-10-29T18:48:54Z"^^xsd:dateTime ;
+                   cpannotationschema:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
+                   rdfs:label "Designed Artifact" ;
+                   skos:definition "A PhysicalArtifact that is also described by a Design. This excludes simple recycling or refunctionalization of natural objects. Most common sense 'artifacts' can be included in this class: cars, lamps, houses, chips, etc." .
+
+
+###  https://w3id.org/la3d/ont/system#Functional_System
+:Functional_System rdf:type owl:Class ;
+                   rdfs:subClassOf :Designed_Artifact ;
+                   <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0003-4091-6059> ;
+                   <http://purl.org/dc/elements/1.1/date> "2021-10-29T19:32:05Z"^^xsd:dateTime ;
+                   rdfs:label "Functional System" .
+
+
+###  https://w3id.org/la3d/ont/system#Object
+:Object rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :has_part ;
+                          owl:allValuesFrom :Object
+                        ] ;
+        <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0003-4091-6059> ;
+        <http://purl.org/dc/elements/1.1/date> "2021-10-29T18:36:18Z"^^xsd:dateTime ;
+        cpannotationschema:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
+        rdfs:label "Object" ;
+        skos:definition "Any physical, social, or mental object, or a substance. Following DOLCE Full, objects are always participating in some event (at least their own life), and are spatially located." .
+
+
+###  https://w3id.org/la3d/ont/system#Object_Aggregate
+:Object_Aggregate rdf:type owl:Class ;
+                  rdfs:subClassOf :Object ;
+                  <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0003-4091-6059> ;
+                  <http://purl.org/dc/elements/1.1/date> "2021-10-29T19:33:09Z"^^xsd:dateTime ;
+                  cpannotationschema:extractedFrom "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl" ;
+                  rdfs:label "Object Aggregate" ;
+                  skos:definition """An aggregate of distributed objects, members of a same Collection, e.g. the stars in a constellation, the parts of a car, the employees of a company, the entries from an encyclopedia, the concepts expressed in a speech, etc.
+It cannot be defined by means of an equivalence axiom, because it'd require the same Collection for all members, an axiom that cannot be expressed in OWL.""" .
+
+
+###  https://w3id.org/la3d/ont/system#Physical_Artifact
+:Physical_Artifact rdf:type owl:Class ;
+                   rdfs:subClassOf :Physical_object ;
+                   <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0003-4091-6059> ;
+                   <http://purl.org/dc/elements/1.1/date> "2021-10-29T18:48:14Z"^^xsd:dateTime ;
+                   cpannotationschema:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
+                   rdfs:label "Physical Artifact" ;
+                   skos:definition """Any PhysicalObject that isDescribedBy a Plan .
+This axiomatization is weak, but allows to talk of artifacts in a very general sense, i.e. including recycled objects, objects with an intentional functional change, natural objects that are given a certain function, even though they are not modified or structurally designed, etc. PhysicalArtifact(s) are not considered disjoint from PhysicalBody(s), in order to allow a dual classification when needed. E.g.,
+FunctionalSubstance(s) are included here as well.
+Immaterial (non-physical) artifacts (e.g. texts, ideas, cultural movements, corporations, communities, etc. can be modelled as social objects (see SocialObject), which are all 'artifactual' in the weak sense assumed here.""" .
+
+
+###  https://w3id.org/la3d/ont/system#Physical_object
+:Physical_object rdf:type owl:Class ;
+                 rdfs:subClassOf :Object ;
+                 <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0003-4091-6059> ;
+                 <http://purl.org/dc/elements/1.1/date> "2021-10-29T18:47:52Z"^^xsd:dateTime ;
+                 cpannotationschema:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
+                 rdfs:label "Physical Object" ;
+                 skos:definition "Any Object that has a proper space region. The prototypical physical object has also an associated mass, but the nature of its mass can greatly vary based on the epistemological status of the object (scientifically measured, subjectively possible, imaginary)." .
+
+
+###  https://w3id.org/la3d/ont/system#Social_Object
+:Social_Object rdf:type owl:Class ;
+               rdfs:subClassOf :Object ;
+               <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0003-4091-6059> ;
+               <http://purl.org/dc/elements/1.1/date> "2021-10-29T20:45:24Z"^^xsd:dateTime ;
+               skos:definition """Any Object that exists only within some communication Event, in which at least one PhysicalObject participates in. 
+In other words, all objects that have been or are created in the process of social communication: for the sake of communication (InformationObject), for incorporating new individuals (SocialAgent, Place), for contextualizing or intepreting existing entities (Description, Concept), or for collecting existing entities (Collection).
+Being dependent on communication, all social objects need to be expressed by some information object (information objects are self-expressing).""" .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
