@@ -16,19 +16,16 @@
 @prefix cpannotationschema: <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#> .
 
 
-@prefix : <https://w3id.org/ammo/core/> .
-@prefix ammo: <https://w3id.org/ammo/full/> .
-@prefix ammocore: <https://w3id.org/ammo/core/> .
-@prefix ammomd: <https://w3id.org/ammo/metadata/> .
-@base <https://w3id.org/moo/full/> .
+@prefix moo: <https://w3id.org/moo/ont/> .
+@base <https://w3id.org/moo/ont/> .
 
-<https://w3id.org/moo/full/> rdf:type owl:Ontology ;
+<https://w3id.org/moo/ont/> rdf:type owl:Ontology ;
         dcterms:creator <https://orcid.org/0000-0003-4091-6059> ;
         dcterms:contributor <https://orcid.org/0000-0001-8214-7177> ;
         dcterms:created "2022-02-15"^^xsd:date ;
         dcterms:modified "2022-02-21"^^xsd:date ;
         owl:versionInfo "0.1"@en ;
-        owl:versionIRI <https://w3id.org/moo/full/0.1> ;
+        owl:versionIRI <https://w3id.org/moo/ont/0.1> ;
         vann:preferredNamespacePrefix "ammocore"@en ;
         vann:preferredNamespaceUri "http://w3id.org/moo/core/" ;
         dcterms:description "Ontology to support the use of additive manufacturing for the production of parts in maintenance operations."@en ;
