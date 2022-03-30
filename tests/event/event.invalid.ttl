@@ -1,0 +1,22 @@
+@prefix : <https://w3id.org/moo/kg/test/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix moo: <https://w3id.org/moo/ont/moo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/spec/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix timeprov: <http://www.w3.org/2006/time/prov#> .
+@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
+@base <https://w3id.org/moo/kg/test/> .
+
+
+:8195812e-bf27-425f-a363-89666571fb5d a moo:Event ;
+    rdfs:label "Basic Event" ;
+    rdfs:comment "Event instance for testing event module" ;
+.
+

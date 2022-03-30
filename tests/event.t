@@ -2,17 +2,22 @@
 
 test_description="Event Ontology Design Pattern"
 
-TESTDIR="$SHARNESS_TEST_DIRECTORY/../modules/common/"
-ONTDIR="$SHARNESS_TEST_DIRECTORY/../"
 
 : "${SHARNESS_TEST_SRCDIR:=.}"
 
 . "$SHARNESS_TEST_SRCDIR/sharness.sh"
 
 
-test_expect_success "Test event ontology pattern " "
-    pdm run pyshacl -m -i rdfs -e '$ONTDIR/ontology.ttl' -s '$TESTDIR/event.shacl.ttl' '$TESTDIR/event.test.ttl'
-"
+TESTDIR="$SHARNESS_TEST_DIRECTORY/event"
+MODULEDIR="$SHARNESS_TEST_DIRECTORY/../modules/common"
+ONTDIR="$SHARNESS_TEST_DIRECTORY/../"
 
+
+test_expect_success "Test event ontology pattern " "
+    pdm run pyshacl -m -i rdfs -e '$MODULEDIR/event.ttl' -s '$MODULEDIR/event.shacl.ttl' '$TESTDIR/event.valid.ttl'
+"
+test_expect_failure "Test event ontology pattern " "
+    pdm run pyshacl -m -i rdfs -e '$MODULEDIR/event.ttl' -s '$MODULEDIR/event.shacl.ttl' '$TESTDIR/event.invalid.ttl'
+"
 
 test_done
