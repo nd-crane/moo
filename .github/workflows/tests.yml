@@ -16,8 +16,3 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - name: Setup PDM
-      - uses: pdm-project/setup-pdm@main
-        with:
-          python-version: 3.9
-          enable-pep582: true

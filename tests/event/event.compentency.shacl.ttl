@@ -24,7 +24,7 @@ moo:EventShape a sh:NodeShape ;
         sh:sparql [
             sh:prefixes <http://example.org/shape> ;
             sh:message "{$this} nome does not match {?name}" ;
-            sh:select """
+            sh:select """ll
             SELECT $this ?name
             WHERE {
                 $this $PATH ?name .
