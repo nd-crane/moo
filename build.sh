@@ -7,8 +7,8 @@ ONTOLOGY=ontology.ttl
 VERSION=` grep -i versionInfo modules/common/metadata.ttl | sed 's/[^"]*"\([^"]*\).*/\1/'`
 
 if [ -f "$ONTOLOGY" ]; then
-    rm ontology.ttl
+    rm moo.ttl
 fi
 
 $cmd merge $files -f ttl -o ./
-mv merged.ttl ontology.ttl
+mv merged.ttl moo.ttl

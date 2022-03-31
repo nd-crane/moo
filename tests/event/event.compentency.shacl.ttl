@@ -1,0 +1,37 @@
+@prefix : <https://w3id.org/moo/shapes/shacl/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix moo: <https://w3id.org/moo/ont/moo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/spec/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix timeprov: <http://www.w3.org/2006/time/prov#> .
+@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
+@base <https://w3id.org/moo/shapes/shacl/> .
+
+# See pyshacl example test 120
+# https://github.com/RDFLib/pySHACL/blob/master/test/issues/test_120.py
+moo:EventShape a sh:NodeShape ;
+    sh:targetClass moo:Event ;
+    sh:property [ a sh:PropertyShape;
+        sh:path ( ex:i ex:name ) ;
+        sh:sparql [
+            sh:prefixes <http://example.org/shape> ;
+            sh:message "{$this} nome does not match {?name}" ;
+            sh:select """
+            SELECT $this ?name
+            WHERE {
+                $this $PATH ?name .
+                FILTER NOT EXISTS {
+                    $this ex:i/ex:nome ?name .
+                }
+            }
+        """ ] ;
+    ] ;
+.

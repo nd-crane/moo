@@ -1,0 +1,42 @@
+@prefix : <https://w3id.org/moo/shapes/shacl/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix moo: <https://w3id.org/moo/ont/moo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/spec/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix timeprov: <http://www.w3.org/2006/time/prov#> .
+@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
+@base <https://w3id.org/moo/shapes/shacl/> .
+
+
+moo:EventShape a sh:NodeShape ;
+    sh:targetClass moo:Event ;
+    sh:property [
+        sh:path moo:occursAtTime;
+        sh:name "Time" ;
+        sh:description "OWL Time Temporal entity";
+        sh:class moo:TimeEntity ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:nodeKind sh:IRI ;
+        sh:severity sh:Violation;
+    ];
+    sh:property [
+        sh:path moo:occursAtPlace ;
+        sh:name "Place";
+        sh:class moo:Place ;
+        sh:description "Geosparql Spatial Object " ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:nodeKind sh:IRI ;
+        sh:severity sh:Violation ;
+    ];
+
+.
