@@ -16,14 +16,20 @@ This ontology follows the ontology design principles explained in ["Modular Onto
 
 ## Testing
 
+Testing of ODP derived modules is done through using the [Test Anything Protocol](http://testanything.org) (TAP) and a shell implementation of TAP called [sharness](https://github.com/chriscool/sharness) that facilitates testing orchestration using unix shell scripts. Test cases are constructed in sample knowledge graphs that are tested against the [Shapes Constraints Language](https://www.w3.org/TR/shacl/) (SHACL) specification of the ontology module to be tested. The [pyshacl](https://github.com/RDFLib/pySHACL) python based validator for SHACL is used in the test harness to assess the correctness and conformance of sample data to the ontology through the shapes.
+
+### Github Actions Integration
+
+The workflow is automatically executed on a "push" action to the github repository using the [github actions](https://github.com/features/actions) automated software workflow. The [workflow syntax](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun) provisions a ubuntu container using the [python starter action](https://github.com/actions/starter-workflows/blob/main/ci/python-app.yml) as a template. The [Python Development Master](https://pdm.fming.dev) python framework provisions the python packages (pyshacl, pylode, rdfx) to test and construct the full ontologies and documentation for release.
+
 ## Persistent Identifiers and Namespace
 
 ### Internal Namespaces
 
-| Prefix        | URI                           | Description            |
-| ------------- | ----------------------------- | ---------------------- |
-| @prefix mooc  | https://w3id.org/mmo/core     | Ammo Core Ontology     |
-| @prefix moomd | https://w3id.org/mmo/metadata | Ammo Ontology Metadata |
+| Prefix        | URI                               | Description                           |
+| ------------- | --------------------------------- | ------------------------------------- |
+| @prefix moo   | https://w3id.org/moo/ont/moo      | MOO Core Ontology                     |
+| @prefix moosh | https://w3id.org/moo/shapes/shacl | MOO Ontology SHACL Shapes Constraints |
 
 ### External Namespaces
 
