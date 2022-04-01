@@ -1,6 +1,6 @@
 # Maintenance Operations Ontology (MOO)
 
-Ontology in support of additive maintenance operations developed as part of the Trusted AI in effort with Notre Dame Center for Research Computing, Laboratory for Assured AI Applications Development (LA3D), Indiana University and CRANE.
+Ontology in support of maintenance operations developed as part of the Trusted AI in effort with Notre Dame Center for Research Computing, Laboratory for Assured AI Applications Development (LA3D), Indiana University and CRANE.
 
 ## Findable, Accessible, Interoperable, Reusable (FAIR) Data Principles
 
@@ -21,6 +21,10 @@ Testing of ODP derived modules is done through using the [Test Anything Protocol
 ### Github Actions Integration
 
 The workflow is automatically executed on a "push" action to the github repository using the [github actions](https://github.com/features/actions) automated software workflow. The [workflow syntax](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun) provisions a ubuntu container using the [python starter action](https://github.com/actions/starter-workflows/blob/main/ci/python-app.yml) as a template. The [Python Development Master](https://pdm.fming.dev) python framework provisions the python packages (pyshacl, pylode, rdfx) to test and construct the full ontologies and documentation for release.
+
+## Ontology Reuse
+
+This ontology directly imports and reuses the [W3C OWL-Time](https://www.w3.org/TR/owl-time/) ontology, the [OGC Geosparql](https://github.com/opengeospatial/ogc-geosparql/), and the [W3C Provenance Ontology](https://www.w3.org/TR/prov-o/). Alignments are made to Wikidata identifiers.
 
 ## Persistent Identifiers and Namespace
 
@@ -59,7 +63,7 @@ Please use this GitHub repository's [Issue tracker](https://github.com/nd-crane/
 **Charles Vardeman**
 
 _Research Assistant Professor_\
-[Center for Research Computing](https://crc.nd.edu), [University of Notre Dame](https://nd.edu)
+[Center for Research Computing](https://crc.nd.edu), [University of Notre Dame](https://nd.edu)\
 <cvardema@nd.edu>\
 Github: [charlesvardeman](https://github.com/charlesvardeman)\
 ORCID: [0000-0003-4091-6059](https://orcid.org/0000-0003-4091-6059)
