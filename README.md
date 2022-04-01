@@ -57,10 +57,11 @@ Please use this GitHub repository's [Issue tracker](https://github.com/nd-crane/
 ### Direct Contact
 
 **Charles Vardeman**
-_Research Assistant Professor_
+
+_Research Assistant Professor_\
 [Center for Research Computing](https://crc.nd.edu), [University of Notre Dame](https://nd.edu)
-<cvardema@nd.edu>
-Github: [charlesvardeman](https://github.com/charlesvardeman)
+<cvardema@nd.edu>\
+Github: [charlesvardeman](https://github.com/charlesvardeman)\
 ORCID: [0000-0003-4091-6059](https://orcid.org/0000-0003-4091-6059)
 
 ## Acknowledgements
