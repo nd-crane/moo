@@ -31,3 +31,8 @@
     rdfs:label "Basic Spatial Footprint" ;
     rdfs:comment "Basic Spatial Entity using geosparql" ;
 .
+
+:f0e94bca-861a-4b35-95f3-4a8b7578c59b a time:Instant ;
+    rdfs:label "A time instant";
+    rdfs:comment "A time instant for testing the event pattern";
+.

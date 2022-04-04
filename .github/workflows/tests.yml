@@ -1,5 +1,10 @@
 name: Test driven ontology development workflow
-on: [push]
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - "**.md"
 jobs:
   build:
     runs-on: ubuntu-latest

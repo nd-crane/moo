@@ -145,7 +145,7 @@ moo:Timeentity rdf:type owl:Class ;
 
 ###  https://w3id.org/moo/ont/Agentrole
 moo:Agentrole rdf:type owl:Class ;
-              rdfs:subClassOf <https://w3id.org/ammoo/dev/pattern/Participantrole> ;
+              rdfs:subClassOf <https://w3id.org/moo/ont/moo/Participantrole> ;
               rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
               rdfs:label "AgentRole" .
 

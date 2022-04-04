@@ -181,10 +181,10 @@ dependencies = [
 
 [[package]]
 name = "rdfx"
-version = "0.4.3"
+version = "0.4.4"
 requires_python = ">=3.8,<4.0"
 git = "https://github.com/surroundaustralia/rdfx.git"
-revision = "9be5ce2fa8501364c79059953e852445454b4c2d"
+revision = "1c4cc06ef70a811a9f52c8027b57409a7048eac8"
 summary = "Tools for converting, merging, persisting and reading RDF data in different formats."
 dependencies = [
     "boto3<2.0.0,>=1.20.20",
@@ -280,6 +280,7 @@ content_hash = "sha256:a1d759282cf9bab5d68dc9829de0ce9fc828eb5435247e559a7b37484
 ]
 "botocore 1.24.26" = [
     {file = "botocore-1.24.26-py3-none-any.whl", hash = "sha256:530e4006b123fd909c7222eeadc0ce644ba89e63a1d59fff08af6a06f08766fc"},
+    {file = "botocore-1.24.26.tar.gz", hash = "sha256:9f8e31ecbdc7e7bf29e4b195d67d8471f71793676bc193fde35e55cf9e3b41d1"},
 ]
 "certifi 2021.10.8" = [
     {file = "certifi-2021.10.8-py2.py3-none-any.whl", hash = "sha256:d62a0163eb4c2344ac042ab2bdf75399a71a2d8c7d47eac2e2ee91b9d6339569"},

@@ -22,6 +22,19 @@ Testing of ODP derived modules is done through using the [Test Anything Protocol
 
 The workflow is automatically executed on a "push" action to the github repository using the [github actions](https://github.com/features/actions) automated software workflow. The [workflow syntax](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun) provisions a ubuntu container using the [python starter action](https://github.com/actions/starter-workflows/blob/main/ci/python-app.yml) as a template. The [Python Development Master](https://pdm.fming.dev) python framework provisions the python packages (pyshacl, pylode, rdfx) to test and construct the full ontologies and documentation for release.
 
+To test locally, pdm should be installed via pdm instructions. If using pip to execute the following command to get the testing environment python dependencies:
+
+```bash
+$ pip install --user pdm
+$ pdm install
+```
+
+To run a python command, use pdm run as a prefix to the command. For example:
+
+```bash
+$pdm run pyshacl ...
+```
+
 ## Ontology Reuse
 
 This ontology directly imports and reuses the [W3C OWL-Time](https://www.w3.org/TR/owl-time/) ontology, the [OGC Geosparql](https://github.com/opengeospatial/ogc-geosparql/), and the [W3C Provenance Ontology](https://www.w3.org/TR/prov-o/). Alignments are made to Wikidata identifiers.
