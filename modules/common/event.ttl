@@ -1,3 +1,6 @@
+# baseURI: https://w3id.org/moo/ont/
+# prefix: moo
+
 @prefix : <https://w3id.org/moo/ont/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix moo: <https://w3id.org/moo/ont/> .
@@ -20,7 +23,7 @@
 #    Object Properties
 #################################################################
 
-###  https://w3id.org/ammoo/dev/pattern/eventisDescribedBy
+###  https://w3id.org/moo/ont/eventisDescribedBy
 moo:eventisDescribedBy rdf:type owl:ObjectProperty ;
                                                         rdfs:domain moo:eventPlace ;
                                                         rdfs:range moo:eventInformationObject ;
@@ -28,7 +31,7 @@ moo:eventisDescribedBy rdf:type owl:ObjectProperty ;
                                                         rdfs:label "is described by" .
 
 
-###  https://w3id.org/ammoo/dev/pattern/eventoccursAtTime
+###  https://w3id.org/moo/ont/eventoccursAtTime
 moo:eventoccursAtTime rdf:type owl:ObjectProperty ;
                                                        rdfs:domain moo:eventEvent ;
                                                        rdfs:range moo:eventTimeentity ;
@@ -36,10 +39,10 @@ moo:eventoccursAtTime rdf:type owl:ObjectProperty ;
                                                        rdfs:label "occurs at time" .
 
 
-###  https://w3id.org/ammoo/dev/pattern/providesrole
-<https://w3id.org/ammoo/dev/pattern/providesrole> rdf:type owl:ObjectProperty ;
-                                                  rdfs:domain <https://w3id.org/ammoo/dev/pattern/eventEvent> ;
-                                                  rdfs:range <https://w3id.org/ammoo/dev/pattern/Participantrole> ;
+###  https://w3id.org/moo/ont/providesrole
+<https://w3id.org/moo/ont/providesrole> rdf:type owl:ObjectProperty ;
+                                                  rdfs:domain <https://w3id.org/moo/ont/eventEvent> ;
+                                                  rdfs:range <https://w3id.org/moo/ont/Participantrole> ;
                                                   rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
                                                   rdfs:label "providesRole" .
 
@@ -47,22 +50,22 @@ moo:eventoccursAtTime rdf:type owl:ObjectProperty ;
 ###  https://w3id.org/moo/ont/isperformedby
 moo:isperformedby rdf:type owl:ObjectProperty ;
                   rdfs:domain moo:Agentrole ;
-                  rdfs:range <https://w3id.org/ammoo/dev/pattern/eventAgent> ;
+                  rdfs:range <https://w3id.org/moo/ont/eventAgent> ;
                   rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
                   rdfs:label "isPerformedBy" .
 
 
 ###  https://w3id.org/moo/ont/occursAtPlace
 moo:occursAtPlace rdf:type owl:ObjectProperty ;
-                  rdfs:domain <https://w3id.org/ammoo/dev/pattern/eventEvent> ;
-                  rdfs:range <https://w3id.org/ammoo/dev/pattern/eventPlace> ;
+                  rdfs:domain <https://w3id.org/moo/ont/eventEvent> ;
+                  rdfs:range <https://w3id.org/moo/ont/eventPlace> ;
                   rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
                   rdfs:label "occurs at place" .
 
 
 ###  https://w3id.org/moo/ont/performsagentrole
 moo:performsagentrole rdf:type owl:ObjectProperty ;
-                      rdfs:domain <https://w3id.org/ammoo/dev/pattern/eventAgent> ;
+                      rdfs:domain <https://w3id.org/moo/ont/eventAgent> ;
                       rdfs:range moo:Agentrole ;
                       rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
                       rdfs:label "performsAgentRole" .
@@ -97,14 +100,14 @@ prov:InstantaneousEvent rdf:type owl:Class ;
 .
 
 
-###  https://w3id.org/ammoo/dev/pattern/Participantrole
+###  https://w3id.org/moo/ont/Participantrole
 moo:Participantrole rdf:type owl:Class ;
             rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
             rdfs:label "ParticipantRole"
 .
 
 
-###  https://w3id.org/ammoo/dev/pattern/eventAgent
+###  https://w3id.org/moo/ont/eventAgent
 moo:Agent rdf:type owl:Class ;
             rdfs:subClassOf prov:Agent ;
             rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
@@ -112,7 +115,7 @@ moo:Agent rdf:type owl:Class ;
 .
 
 
-###  https://w3id.org/ammoo/dev/pattern/eventEvent
+###  https://w3id.org/moo/ont/eventEvent
 moo:Event rdf:type owl:Class ;
     rdfs:subClassOf prov:InstantaneousEvent ;
     rdfs:comment "An instantaneous event, or event for short, happens in the world and marks a change in the world, in its activities and in its entities. The term 'event' is commonly used in process algebra with a similar meaning. Events represent communications or interactions; they are assumed to be atomic and instantaneous." ;
@@ -121,14 +124,14 @@ moo:Event rdf:type owl:Class ;
 .
 
 
-###  https://w3id.org/ammoo/dev/pattern/eventInformationObject
+###  https://w3id.org/moo/ont/eventInformationObject
 moo:InformationObject rdf:type owl:Class ;
         rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
         rdfs:label "Information Object"
 .
 
 
-###  https://w3id.org/ammoo/dev/pattern/eventPlace
+###  https://w3id.org/moo/ont/eventPlace
 moo:Place rdf:type owl:Class ;
         rdfs:subClassOf geosparql:SpatialObject ;
         rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
@@ -136,7 +139,7 @@ moo:Place rdf:type owl:Class ;
 .
 
 
-###  https://w3id.org/ammoo/dev/pattern/eventTimeentity
+###  https://w3id.org/moo/ont/eventTimeentity
 moo:Timeentity rdf:type owl:Class ;
                                                      rdfs:subClassOf time:TemporalEntity ;
                                                      rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
