@@ -21,10 +21,11 @@
 
 moo:EventShape
   rdf:type sh:NodeShape ;
+  sh:targetClass moo:Event ;
   sh:property [
       sh:path moo:occursAtPlace ;
       sh:class moo:Place ;
-      sh:description "Geosparql Spatial Object " ;
+      sh:description "Geosparql Spatial Object "@en ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
       sh:name "Place" ;
@@ -34,15 +35,15 @@ moo:EventShape
   sh:property [
       sh:path moo:occursAtTime ;
       sh:class moo:TimeEntity ;
-      sh:description "OWL Time Temporal entity" ;
+      sh:description "OWL Time Temporal entity"@en ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
       sh:name "Time" ;
       sh:nodeKind sh:IRI ;
       sh:severity sh:Violation ;
     ] ;
-  sh:targetClass moo:Event ;
 .
+
 moosh:
   rdf:type owl:Ontology ;
   owl:imports ont: ;

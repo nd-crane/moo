@@ -1,0 +1,33 @@
+@prefix : <https://w3id.org/moo/kg/test/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mooh: <https://w3id.org/moo/shapes/shacl/> .
+@prefix moo: <https://w3id.org/moo/ont/moo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/spec/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@base <https://w3id.org/moo/kg/test/> .
+
+# Invalid Identifiers
+:d3136e60-7adb-4518-9d65-cc11d2b654a5 a moo:Identifier ;
+    moo:hasIdentifierType :StarshipPennantNumber ;
+    moo:identifierAsText "NCC-1701"^^xsd:string ;
+.
+
+
+# Invalid Information Object
+:fc7c8ee1-499f-4cbc-8967-590e92380e8b a moo:InformationObject .
+
+
+# An Identifier Type
+
+:StarshipPennantNumber a moo:IdentifierType ;
+    rdfs:label "Federation Starship Registry Identifier" ;
+    skos:note "Identifier types should be modeled out in more detail" ;
+    rdfs:seeAlso <https://www.wikidata.org/wiki/Property:P879>;
+.
+

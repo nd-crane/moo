@@ -1,0 +1,61 @@
+# baseURI: https://w3id.org/moo/shapes/shacl/
+# imports: https://w3id.org/moo/ont/
+# prefix: moosh
+
+@prefix : <https://w3id.org/moo/shapes/shacl/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix moosh: <https://w3id.org/moo/shapes/shacl/> .
+@prefix moo: <https://w3id.org/moo/ont/moo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/spec/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@base <https://w3id.org/moo/shapes/shacl/> .
+
+
+
+moosh:IdentifierShape
+    rdf:type  sh:NodeShape;
+    sh:targetClass moo:Identifier;
+    # Identifiers MUST have one and only one Identifier Type
+    sh:property [
+        sh:path moo:hasIdentifierType ;
+        sh:class moo:IdentifierType ;
+        sh:maxCount 1 ;
+        sh:minCount 1 ;
+        sh:name "Identifier Type" ;
+        sh:nodeKind sh:IRI ;
+        sh:severity sh:Violation ;
+        sh:resultMessage "Each identifier MUST have a type"@en ;
+    ];
+    # Identifiers MUST have one and only one Identifier String or URI;
+    sh:property [
+        sh:path moo:identifierAsText ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:name "Identifier value" ;
+        sh:severity sh:Violation ;
+        sh:resultMessage "Each identifier MUST have a string for the actual identifer"@en ;
+    ]
+.
+
+moosh:InformationObjectShape
+    a sh:NodeShape ;
+    sh:targetClass moo:InformationObject ;
+    # Information objects may specifiy one or more realizatizations or distribution of the information content.
+    sh:property [
+        sh:path moo:isRealizedBy ;
+        sh:class moo:InformationRealization ;
+        sh:minCount 0;
+    ];
+    # Information objects may have one or more identifiers for the type of information object
+    sh:property [
+        sh:path moo:hasIdentifier ;
+        sh:class moo:Identifier ;
+        sh:mincount 0;
+    ];
+.

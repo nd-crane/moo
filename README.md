@@ -14,6 +14,10 @@ Ontology is modeled using [RDFS-Plus](http://mlwiki.org/index.php/RDFS-Plus) lev
 
 This ontology follows the ontology design principles explained in ["Modular Ontology Modeling"](http://www.semantic-web-journal.net/system/files/swj2886.pdf) using [The eXtreme Design Methodology](https://karlhammar.com/downloads/blomqvist2016engineering.pdf) borrowed from [software engineering](https://en.wikipedia.org/wiki/Extreme_programming).
 
+## Directory Structure
+
+Each ontology module is develeped using higher level Ontology Design Patterns (ODPs) stored in the [modules/common](modules/common/) directory. Modules that use the core ODPs are stored in their own module directories. For example, the high level event ODP is stored in the modules common directory but sublcasses of event like failure event, preventave maintenance event, etc, are stored in the events module directory that import the event pattern. Current versions of some mid-level standard ontologies such as [W3C OWL-Time](https://www.w3.org/TR/owl-time/) ontology, the [OGC Geosparql](https://github.com/opengeospatial/ogc-geosparql/), the [W3C Provenance Ontology](https://www.w3.org/TR/prov-o/), and the [W3C Data Catalog Vocabulary](https://www.w3.org/TR/vocab-dcat-2/) are stored in the [modules/common] directory for convenience but are imported by URI into the ontologies that utilize them directly.
+
 ## Testing
 
 Testing of ODP derived modules is done through using the [Test Anything Protocol](http://testanything.org) (TAP) and a shell implementation of TAP called [sharness](https://github.com/chriscool/sharness) that facilitates testing orchestration using unix shell scripts. Test cases are constructed in sample knowledge graphs that are tested against the [Shapes Constraints Language](https://www.w3.org/TR/shacl/) (SHACL) specification of the ontology module to be tested. The [pyshacl](https://github.com/RDFLib/pySHACL) python based validator for SHACL is used in the test harness to assess the correctness and conformance of sample data to the ontology through the shapes.
@@ -32,7 +36,7 @@ $ pdm install
 To run a python command, use pdm run as a prefix to the command. For example:
 
 ```bash
-$pdm run pyshacl ...
+$ pdm run pyshacl ...
 ```
 
 ## Ontology Reuse

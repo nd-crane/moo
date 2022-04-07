@@ -1,6 +1,7 @@
-@prefix : <http://www.gra.fo/schema/untitled-ekg#> .
+@prefix : <https://w3id.org/moo/ont/moo/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix gf: <http://www.gra.fo/schema/untitled-ekg#> .
+@prefix mooh: <https://w3id.org/moo/shapes/shacl/> .
+@prefix moo: <https://w3id.org/moo/ont/moo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -8,111 +9,106 @@
 @prefix foaf: <http://xmlns.com/foaf/spec/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@base <http://www.gra.fo/schema/untitled-ekg#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@base <https://w3id.org/moo/ont/moo/> .
 
-<http://www.gra.fo/schema/untitled-ekg> rdf:type owl:Ontology .
+<https://w3id.org/moo/ont/moo/> rdf:type owl:Ontology .
 
 #################################################################
 #    Object Properties
 #################################################################
 
-###  http://www.gra.fo/schema/untitled-ekg#hasidentifier
-gf:hasidentifier rdf:type owl:ObjectProperty ;
-                 rdfs:domain gf:Informationobject ;
-                 rdfs:range gf:Identifier ;
-                 rdfs:isDefinedBy <http://www.gra.fo/schema/untitled-ekg> ;
-                 rdfs:label "hasIdentifier" .
+###   https://w3id.org/moo/shapes/shacl/hasidentifier
+moo:hasIdentifier rdf:type owl:ObjectProperty ;
+                 rdfs:domain moo:InformationObject ;
+                 rdfs:range moo:Identifier ;
+                 rdfs:isDefinedBy moo: ;
+                 rdfs:label "hasIdentifier"@en .
 
 
-###  http://www.gra.fo/schema/untitled-ekg#hasidentifiertype
-gf:hasidentifiertype rdf:type owl:ObjectProperty ;
-                     rdfs:domain gf:Identifier ;
-                     rdfs:range gf:IdentifierType ;
-                     rdfs:isDefinedBy <http://www.gra.fo/schema/untitled-ekg> ;
-                     rdfs:label "hasIdentifierType" .
+###   https://w3id.org/moo/shapes/shacl/hasidentifiertype
+moo:hasIdentifierType rdf:type owl:ObjectProperty ;
+                     rdfs:domain moo:Identifier ;
+                     rdfs:range moo:IdentifierType ;
+                     rdfs:isDefinedBy moo: ;
+                     rdfs:label "hasIdentifierType"@en .
 
 
-###  http://www.gra.fo/schema/untitled-ekg#isabout
-gf:isabout rdf:type owl:ObjectProperty ;
-           rdfs:domain gf:Informationrealization ;
+###   https://w3id.org/moo/shapes/shacl/isabout
+moo:isAbout rdf:type owl:ObjectProperty ;
+           rdfs:domain moo:InformationRealization ;
            rdfs:range owl:Thing ;
-           rdfs:isDefinedBy <http://www.gra.fo/schema/untitled-ekg> ;
-           rdfs:label "isAbout" .
+           rdfs:isDefinedBy moo: ;
+           rdfs:label "isAbout"@en .
 
 
-###  http://www.gra.fo/schema/untitled-ekg#isdescribedby
-gf:isdescribedby rdf:type owl:ObjectProperty ;
+###   https://w3id.org/moo/shapes/shacl/isdescribedby
+moo:isDescribedBy rdf:type owl:ObjectProperty ;
                  rdfs:domain owl:Thing ;
-                 rdfs:range gf:Informationobject ;
-                 rdfs:isDefinedBy <http://www.gra.fo/schema/untitled-ekg> ;
-                 rdfs:label "isDescribedBy" .
+                 rdfs:range moo:InformationObject ;
+                 rdfs:isDefinedBy moo: ;
+                 rdfs:label "isDescribedBy"@en .
 
 
-###  http://www.gra.fo/schema/untitled-ekg#isrealizedby
-gf:isrealizedby rdf:type owl:ObjectProperty ;
-                rdfs:domain gf:Informationobject ;
-                rdfs:range gf:Informationrealization ;
-                rdfs:isDefinedBy <http://www.gra.fo/schema/untitled-ekg> ;
-                rdfs:label "isRealizedBy" .
+###   https://w3id.org/moo/shapes/shacl/isrealizedby
+moo:isRealizedBy rdf:type owl:ObjectProperty ;
+                rdfs:domain moo:InformationObject ;
+                rdfs:range moo:InformationRealization ;
+                rdfs:isDefinedBy moo: ;
+                rdfs:label "isRealizedBy"@en .
 
 
 #################################################################
 #    Data properties
 #################################################################
 
-###  http://www.gra.fo/schema/untitled-ekg#identifierastext
-gf:identifierastext rdf:type owl:DatatypeProperty ;
-                    rdfs:domain gf:Identifier ;
+###   https://w3id.org/moo/shapes/shacl/identifierastext
+moo:identifierAsText rdf:type owl:DatatypeProperty ;
+                    rdfs:domain moo:Identifier ;
                     rdfs:range xsd:string ;
-                    rdfs:isDefinedBy <http://www.gra.fo/schema/untitled-ekg> ;
-                    rdfs:label "identifierAsText" .
+                    rdfs:isDefinedBy moo: ;
+                    rdfs:label "identifierAsText"@en .
 
 
 #################################################################
 #    Classes
 #################################################################
 
-###  http://www.gra.fo/schema/untitled-ekg#Identifier
-gf:Identifier rdf:type owl:Class ;
-              rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                owl:onProperty gf:identifierastext ;
-                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                owl:onDataRange xsd:string
-                              ] ;
-              rdfs:isDefinedBy <http://www.gra.fo/schema/untitled-ekg> ;
-              rdfs:label "Identifier" .
+###   https://w3id.org/moo/shapes/shacl/Identifier
+moo:Identifier rdf:type rdfs:Class ;
+              rdfs:seeAlso <https://www.wikidata.org/wiki/Wikidata:External_identifiers> ;
+              skos:example <https://www.wikidata.org/wiki/Property:P345> ;
+              rdfs:isDefinedBy moo: ;
+              skos:definiton "name that identifies either a unique object or a unique class of objects"@en ;
+              rdfs:label "Identifier"@en .
 
 
-###  http://www.gra.fo/schema/untitled-ekg#IdentifierType
-gf:IdentifierType rdf:type owl:Class ;
-                  rdfs:isDefinedBy <http://www.gra.fo/schema/untitled-ekg> ;
-                  rdfs:label "Identifier Type" .
+###   https://w3id.org/moo/shapes/shacl/IdentifierType
+moo:IdentifierType rdf:type owl:Class ;
+                  rdfs:isDefinedBy moo: ;
+                  rdfs:label "Identifier Type"@en .
 
 
-###  http://www.gra.fo/schema/untitled-ekg#Informationobject
-gf:Informationobject rdf:type owl:Class ;
-                     rdfs:isDefinedBy <http://www.gra.fo/schema/untitled-ekg> ;
-                     rdfs:label "InformationObject" .
+###   https://w3id.org/moo/shapes/shacl/Informationobject
+moo:InformationObject rdf:type rdfs:Class ;
+                     owl:disjointWith moo:InformationRealization;
+                     rdfs:isDefinedBy moo: ;
+                     rdfs:label "InformationObject"@en .
 
 
-###  http://www.gra.fo/schema/untitled-ekg#Informationrealization
-gf:Informationrealization rdf:type owl:Class ;
-                          rdfs:isDefinedBy <http://www.gra.fo/schema/untitled-ekg> ;
-                          rdfs:label "InformationRealization" .
+###   https://w3id.org/moo/shapes/shacl/Informationrealization
+moo:InformationRealization rdf:type rdfs:Class ;
+                          rdfs:isDefinedBy moo: ;
+                          rdfs:label "InformationRealization"@en .
 
 
-###  http://www.w3.org/2002/07/owl#Thing
-owl:Thing rdf:type owl:Class ;
-          rdfs:isDefinedBy <http://www.gra.fo/schema/untitled-ekg> ;
-          rdfs:label "owl:Thing" .
+
 
 
 #################################################################
 #    Annotations
 #################################################################
 
-<http://www.gra.fo/schema/untitled-ekg> rdfs:comment "" ;
-                                        rdfs:label "Information Object" .
 
 
 ###  Generated by the OWL API (version 5.1.17) https://github.com/owlcs/owlapi/
