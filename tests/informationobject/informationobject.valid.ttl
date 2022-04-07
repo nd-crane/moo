@@ -12,7 +12,7 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @base <https://w3id.org/moo/kg/test/> .
 
-# Invalid Identifiers
+# Valid Identifiers
 :d3136e60-7adb-4518-9d65-cc11d2b654a5 a moo:Identifier ;
     moo:hasIdentifierType :StarshipPennantNumber ;
     moo:identifierAsText "NCC-1701"^^xsd:string ;
