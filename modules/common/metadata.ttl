@@ -16,27 +16,30 @@
 @prefix cpannotationschema: <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#> .
 
 
-@prefix moo: <https://w3id.org/moo/ont/> .
-@base <https://w3id.org/moo/ont/> .
+@prefix moo: <https://w3id.org/moo/ont/moo/> .
+@prefix moosh: <https://w3id.org/moo/shapes/shacl/>
+@base <https://w3id.org/moo/ont/moo/> .
 
-<https://w3id.org/moo/ont/> rdf:type owl:Ontology ;
+<https://w3id.org/moo/ont/moo> rdf:type owl:Ontology ;
         dcterms:creator <https://orcid.org/0000-0003-4091-6059> ;
         dcterms:contributor <https://orcid.org/0000-0001-8214-7177> ;
         dcterms:created "2022-02-15"^^xsd:date ;
         dcterms:modified "2022-02-21"^^xsd:date ;
-        owl:versionInfo "0.1"@en ;
+        owl:versionInfo "0.0.1"@en ;
         owl:versionIRI <https://w3id.org/moo/ont/0.1> ;
-        vann:preferredNamespacePrefix "ammocore"@en ;
-        vann:preferredNamespaceUri "http://w3id.org/moo/core/" ;
+        vann:preferredNamespacePrefix "moo"@en ;
+        vann:preferredNamespaceUri "http://w3id.org/moo/ont/moo/" ;
         dcterms:description "Ontology to support the use of additive manufacturing for the production of parts in maintenance operations."@en ;
         dcterms:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
         dcterms:license <https://spdx.org/licenses/CC-BY-4.0> ;
         sdo:license "https://spdx.org/licenses/CC-BY-4.0"@en ;
         dcterms:publisher wd:Q178848;
-        dcterms:title "Additive Manufacturing for Maintancence Operations Ontology"@en ;
-        skos:historyNote """Version 0.1 is the first release of the core ontology constructed from the Agent, Event, Material Transformation, and Designed Artifact System Patterns
+        dcterms:title "Maintancence Operations Ontology"@en ;
+        skos:historyNote """Version 0.0.1 is the first release of the core ontology constructed from the Agent, Event, and Designed Artifact System Patterns
                 * Creation of Core Module
                 * Creation of Units Module and alignment to QUDT"""@en ;
+        owl:imports <http://www.w3.org/2006/time> ;
+        owl:imports <https://raw.githubusercontent.com/opengeospatial/ogc-geosparql/master/1.1/geo.ttl>;
 .
 
 
