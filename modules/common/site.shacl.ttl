@@ -1,0 +1,69 @@
+# baseURI: https://w3id.org/moo/shapes/shacl/
+# imports: https://w3id.org/moo/ont/
+# prefix: moosh
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/spec/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix moo: <https://w3id.org/moo/ont/moo/> .
+@prefix moosh: <https://w3id.org/moo/shapes/shacl/> .
+@prefix ont: <https://w3id.org/moo/ont/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix timeprov: <http://www.w3.org/2006/time/prov#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+moo:SiteShape
+  rdf:type sh:NodeShape ;
+  sh:targetClass moo:Site ;
+  # A Site MAY have one or more identifiers for the site.
+  sh:property [
+      sh:path moo:hasSiteIdentifier;
+      sh:class moo:SiteIdentifier ;
+      sh:description "Site Identifier "@en ;
+      sh:minCount 0 ;
+      sh:name "Site Identifier" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  # A site is a Geosparql Feature that MAY have a geometry.
+  sh:property [
+      sh:path moo:hasGeometry ;
+      sh:class geo:Geometry ;
+      sh:description "Geosparql Geometry"@en ;
+      sh:minCount 0 ;
+      sh:name "Geometry" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+.
+
+moo:SiteIdentifierShape a sh:NodeShape;
+    sh:targetClass moo:SiteIdentifier ;
+        sh:property [
+        sh:path moo:hasSiteIdentifierType ;
+        sh:class moo:SiteIdentifierType ;
+        sh:maxCount 1 ;
+        sh:minCount 1 ;
+        sh:name "Identifier Type" ;
+        sh:nodeKind sh:IRI ;
+        sh:severity sh:Violation ;
+        sh:resultMessage "Each identifier MUST have a type"@en ;
+    ];
+    # Identifiers MUST have one and only one Identifier String or URI;
+    sh:property [
+        sh:path moo:identifierAsText ;
+        sh:or(
+            [ sh:datatype xsd:string ]
+            [ sh:datatype xsd:anyURI ]
+        );
+        sh:minCount 1 ;
+        sh:name "Identifier value" ;
+        sh:severity sh:Violation ;
+        sh:resultMessage "Each identifier MUST have a string for the actual identifer"@en ;
+    ]
+.

@@ -13,11 +13,11 @@ MODULEDIR="$SHARNESS_TEST_DIRECTORY/../modules/common"
 ONTDIR="$SHARNESS_TEST_DIRECTORY/../"
 
 test_expect_failure "Test event pattern failure nodes " "
-    pdm run pyshacl -m -i rdfs -e '$MODULEDIR/informationobject.ttl' -s '$MODULEDIR/informationobject.shacl.ttl' '$TESTDIR/informationobject.invalid.ttl'
+    pdm run pyshacl -m -i both -e '$MODULEDIR/informationobject.ttl' -s '$MODULEDIR/informationobject.shacl.ttl' '$TESTDIR/informationobject.invalid.ttl'
 "
 
 test_expect_success "Test event pattern failure nodes " "
-    pdm run pyshacl -m -i rdfs -e '$MODULEDIR/informationobject.ttl' -s '$MODULEDIR/informationobject.shacl.ttl' '$TESTDIR/informationobject.valid.ttl'
+    pdm run pyshacl -m -i both -e '$MODULEDIR/informationobject.ttl' -s '$MODULEDIR/informationobject.shacl.ttl' '$TESTDIR/informationobject.valid.ttl'
 "
 
 test_done

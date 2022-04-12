@@ -3,6 +3,7 @@
 @prefix moo: <https://w3id.org/moo/ont/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/spec/> .
@@ -10,71 +11,94 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @base <https://w3id.org/moo/ont/> .
 
-<https://w3id.org/moo/ont/> rdf:type owl:Ontology .
+<https://w3id.org/moo/ont/> rdf:type owl:Ontology ;
+                             owl:imports <http://www.opengis.net/ont/geosparql> ;
+.
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+dc:date rdf:type owl:AnnotationProperty .
+
 
 #################################################################
 #    Object Properties
 #################################################################
 
-###  https://w3id.org/moo/ont/hasgeometry
-moo:hasgeometry rdf:type owl:ObjectProperty ;
-                rdfs:domain moo:Site ;
-                rdfs:range moo:Geogeometry ;
-                rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
-                rdfs:label "hasGeometry" .
 
 
-###  https://w3id.org/moo/ont/isdescribedby
-moo:isdescribedby rdf:type owl:ObjectProperty ;
+
+###  https://w3id.org/moo/ont/hasSiteIdentifier
+moo:hasSiteIdentifier rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf moo:hasIdentifier ;
                   rdfs:domain moo:Site ;
-                  rdfs:range moo:Placeinformationobject ;
+                  rdfs:range moo:SiteIdentifier ;
                   rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
-                  rdfs:label "isDescribedBy" .
+                  rdfs:label "hasSiteIdentifier" .
+
+###  https://w3id.org/moo/ont/identifierAsText
+moo:identifierAsText rdf:type owl:DatatypeProperty ;
+                  rdfs:domain moo:SiteIdentifier ;
+                  rdfs:range xsd:string ;
+                  rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
+                  rdfs:label "identifierAsText" .
+
+###  https://w3id.org/moo/ont/siteIdentifierType
+moo:siteIdentifierType rdf:type owl:ObjectProperty ;
+                  rdfs:domain moo:SiteIdentifier ;
+                  rdfs:range moo:SiteIdentifierType ;
+                  rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
+                  rdfs:label "siteIdentifierType" .
 
 
 #################################################################
 #    Classes
 #################################################################
 
-###  https://w3id.org/moo/ont/Geofeature
-moo:Geofeature rdf:type owl:Class ;
-               rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
-               rdfs:label "geo:Feature" .
+###  https://w3id.org/moo/ont/Facility
+moo:Facility rdf:type owl:Class ;
+             rdfs:subClassOf moo:Site ;
+             skos:definition "Place for doing something"@en;
+             dc:creator <http://orcid.org/0000-0003-4091-6059> ;
+             dc:date "2022-04-12T13:35:16Z"^^xsd:dateTime ;
+             rdfs:seeAlso <https://www.wikidata.org/wiki/Q13226383> .
 
-
-###  https://w3id.org/moo/ont/Geogeometry
-moo:Geogeometry rdf:type owl:Class ;
-                rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
-                rdfs:label "geo:Geometry" .
 
 
 ###  https://w3id.org/moo/ont/Informationobject
-moo:Informationobject rdf:type owl:Class ;
+moo:SiteIdentifier rdf:type rdfs:Class ;
+                      rdfs:subClassOf moo:Identifier ;
                       rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
-                      rdfs:label "InformationObject" .
+                      rdfs:label "Site Identifier" .
+
+moo:SiteIdentifierType rdf:type rdfs:Class ;
+                      rdfs:subClassOf moo:IdentiferType ;
+                      rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
+                      rdfs:label "Identifier Type" .
 
 
-###  https://w3id.org/moo/ont/Placeinformationobject
-moo:Placeinformationobject rdf:type owl:Class ;
-                           rdfs:subClassOf moo:Informationobject ;
-                           rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
-                           rdfs:label "PlaceInformationObject" .
+###  https://w3id.org/moo/ont/MilitaryFacility
+moo:MilitaryFacility rdf:type rdfs:Class ;
+                     rdfs:subClassOf moo:Facility ;
+                     dc:creator <http://orcid.org/0000-0003-4091-6059> ;
+                     dc:date "2022-04-12T13:35:35Z"^^xsd:dateTime ;
+                     rdfs:seeAlso <https://www.wikidata.org/wiki/Q18691599> .
 
 
 ###  https://w3id.org/moo/ont/Site
 moo:Site rdf:type owl:Class ;
-         rdfs:subClassOf moo:Geofeature ;
+         rdfs:subClassOf geo:Feature ;
          rdfs:comment "The Site Pattern is intended to describe a places of interest (POIs) that is associated with a certain geospatial feature. We model a  site as something that is described by some information object and allows us to attach non-geospatial information (e.g., name, web page, etc.) and my potentially have some spatial footprint, which is a geometric feature in space, e.g. a point, a lin e, etc." ;
          rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
          rdfs:label "Site" .
 
 
-#################################################################
-#    Annotations
-#################################################################
-
-<https://w3id.org/moo/ont/> rdfs:comment "" ;
-                            rdfs:label "Place Core" .
-
-
-###  Generated by the OWL API (version 5.1.17) https://github.com/owlcs/owlapi/
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

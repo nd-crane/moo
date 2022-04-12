@@ -1,0 +1,19 @@
+@prefix : <https://w3id.org/moo/kg/test/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix moo: <https://w3id.org/moo/ont/moo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/spec/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix timeprov: <http://www.w3.org/2006/time/prov#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@base <https://w3id.org/moo/kg/test/> .
+
+:16080d93-0cf5-4361-8622-ba46997ad9c5 a moo:Site .
+
+:33cfdba4-bfe2-4873-b3c9-2624c590ee8d a moo:SiteIdentifier .
