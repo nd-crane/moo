@@ -2,23 +2,54 @@
 
 Ontology in support of maintenance operations developed as part of the Trusted AI in effort with Notre Dame Center for Research Computing, Laboratory for Assured AI Applications Development (LA3D), Indiana University and CRANE.
 
-## Findable, Accessible, Interoperable, Reusable (FAIR) Data Principles
+## Quick Start Guide
+
+### Setting Up Your Local Environment
+
+Setting up the local environment is necessary in order to test locally.
+
+First, clone the repo by running `git clone https://github.com/nd-crane/moo.git`
+
+Next, make sure Python is set up to use PDM. Simply run `pip install -U pdm`
+
+NOTE: this may not work. If you end up with a `ModuleNotFound` error where PDM can't find the pdm.core module, then install uninstall the current installation of PDM and reinstall it using `curl`:
+
+`curl -sSL https://raw.githubusercontent.com/pdm-project/pdm/main/install-pdm.py | python3 -`
+
+Next, run `pdm install` in order to install the necessary packages outlined in the `pdm.lock`
+
+### Running Tests Locally
+ After switching over to the `tests` directory, run a test by using it as an executable, for example:
+ `./events.t`
+
+NOTE: you may have to adjust permssions on the file in order to run it as executable using `chmod +x`
+
+### Note About Running Things in PDM
+
+In order to run a package installed via PDM, you will need to do the following:
+
+```
+$ pdm run [PACKAGE_NAME]
+```
+
+## More Information about MOO's Methodology
+### Findable, Accessible, Interoperable, Reusable (FAIR) Data Principles
 
 This ontology is developed using a [FAIR methodology](https://www.go-fair.org/fair-principles/) follows ["Best Practices for Implementing FAIR Vocabularies and Ontologies on the Web"](https://arxiv.org/abs/2003.13084v1), ["Ten simple rules for making a vocabulary FAIR"](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009041), and FAIRsFAIR ["D2.5 FAIR Semantics Recommendations Second Iteration"](https://zenodo.org/record/4314321#.YW2XNtnMIeY). We have adopted the use of Permanent Identifiers for the Web [w3id](https://w3id.org) as recommended by the best practices documents.
 
-## Expressivity
+### Expressivity
 
 Ontology is modeled using [RDFS-Plus](http://mlwiki.org/index.php/RDFS-Plus) level of automatization with W3C [RDFS Schema](https://www.w3.org/TR/rdf-schema/) and selected W3C [OWL 2 Constructs](https://www.w3.org/TR/owl2-primer/). Additionally, to facilitate alignment and adoption using schema.org level base vocabularies as outlined in the schema.org [developer documentation](https://schema.org/docs/developers.html). This ontology is developed using [Modular Ontology Modeling Methodology](http://www.semantic-web-journal.net/content/modular-ontology-modeling-10) using [Ontology Design Patterns](http://ontologydesignpatterns.org/wiki/Main_Page) connected to form modules that build the larger ontology. Shape Constraints using [W3C Shapes Constraint Language](https://www.w3.org/TR/shacl/) are also provided for graph shape validation as discussed in the [SHACL and OWL](https://spinrdf.org/shacl-and-owl.html) document. Alignments are modeled similarly to the [RealEstateCore](https://github.com/RealEstateCore/rec) ontology that has created [modular alignments](https://github.com/RealEstateCore/rec/tree/master/ontology/alignments) that form the basis for adoption in [Azure Digital Twins](https://docs.microsoft.com/en-us/azure/digital-twins/concepts-ontologies) and cross linking to [Industry Standard Ontologies in a Knowledge Graph](https://docs.microsoft.com/en-us/azure/digital-twins/concepts-ontologies-adopt).
 
-## Modular Ontology Design
+### Modular Ontology Design
 
 This ontology follows the ontology design principles explained in ["Modular Ontology Modeling"](http://www.semantic-web-journal.net/system/files/swj2886.pdf) using [The eXtreme Design Methodology](https://karlhammar.com/downloads/blomqvist2016engineering.pdf) borrowed from [software engineering](https://en.wikipedia.org/wiki/Extreme_programming).
 
-## Directory Structure
+### Directory Structure
 
 Each ontology module is develeped using higher level Ontology Design Patterns (ODPs) stored in the [modules/common](modules/common/) directory. Modules that use the core ODPs are stored in their own module directories. For example, the high level event ODP is stored in the modules common directory but sublcasses of event like failure event, preventave maintenance event, etc, are stored in the events module directory that import the event pattern. Current versions of some mid-level standard ontologies such as [W3C OWL-Time](https://www.w3.org/TR/owl-time/) ontology, the [OGC Geosparql](https://github.com/opengeospatial/ogc-geosparql/), the [W3C Provenance Ontology](https://www.w3.org/TR/prov-o/), and the [W3C Data Catalog Vocabulary](https://www.w3.org/TR/vocab-dcat-2/) are stored in the [modules/common] directory for convenience but are imported by URI into the ontologies that utilize them directly.
 
-## Testing
+### Testing
 
 Testing of ODP derived modules is done through using the [Test Anything Protocol](http://testanything.org) (TAP) and a shell implementation of TAP called [sharness](https://github.com/chriscool/sharness) that facilitates testing orchestration using unix shell scripts. Test cases are constructed in sample knowledge graphs that are tested against the [Shapes Constraints Language](https://www.w3.org/TR/shacl/) (SHACL) specification of the ontology module to be tested. The [pyshacl](https://github.com/RDFLib/pySHACL) python based validator for SHACL is used in the test harness to assess the correctness and conformance of sample data to the ontology through the shapes.
 
@@ -26,20 +57,7 @@ Testing of ODP derived modules is done through using the [Test Anything Protocol
 
 The workflow is automatically executed on a "push" action to the github repository using the [github actions](https://github.com/features/actions) automated software workflow. The [workflow syntax](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun) provisions a ubuntu container using the [python starter action](https://github.com/actions/starter-workflows/blob/main/ci/python-app.yml) as a template. The [Python Development Master](https://pdm.fming.dev) python framework provisions the python packages (pyshacl, pylode, rdfx) to test and construct the full ontologies and documentation for release.
 
-To test locally, pdm should be installed via pdm instructions. If using pip to execute the following command to get the testing environment python dependencies:
-
-```bash
-$ pip install --user pdm
-$ pdm install
-```
-
-To run a python command, use pdm run as a prefix to the command. For example:
-
-```bash
-$ pdm run pyshacl ...
-```
-
-## Ontology Reuse
+### Ontology Reuse
 
 This ontology directly imports and reuses the [W3C OWL-Time](https://www.w3.org/TR/owl-time/) ontology, the [OGC Geosparql](https://github.com/opengeospatial/ogc-geosparql/), and the [W3C Provenance Ontology](https://www.w3.org/TR/prov-o/). Alignments are made to Wikidata identifiers.
 
