@@ -9,7 +9,7 @@ license-expression = "MIT"
 dependencies = [
     "pyshacl>=0.19.0",
     "pylode>=3.0.1",
-    "rdfx @ git+https://github.com/surroundaustralia/rdfx.git",
+    "rdfx @ git+https://github.com/charlesvardeman/rdfx.git",
 ]
 requires-python = ">=3.9"
 
