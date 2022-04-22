@@ -1,0 +1,133 @@
+# baseURI: https://w3id.org/moo/ont/
+# prefix: moo
+
+@prefix : <https://w3id.org/moo/ont/> .
+@prefix moo: <https://w3id.org/moo/ont/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sio: <http://semanticscience.org/ontology/sio.owl> .
+@prefix dcat: <http://www.w3.org/ns/dcat> .
+@base <https://w3id.org/moo/ont/> .
+
+<https://w3id.org/moo/ont/> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+moo:hasComponentPart rdf:type owl:ObjectProperty ;
+            rdfs:domain moo:System ;
+            rdfs:range moo:Component ;
+            rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
+            rdfs:label "hasComponentPart" ;
+            owl:inverseOf moo:isComponentPart
+.
+
+moo:isComponentPart rdf:type owl:ObjectProperty ;
+            rdfs:domain moo:Component ;
+            rdfs:range moo:System ;
+            rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
+            rdfs:label "isComponentPart" ;
+            owl:inverseOf moo:hasComponentPart
+.
+
+moo:hasSubsystem rdf:type owl:ObjectProperty ;
+            rdfs:domain moo:System ;
+            rdfs:range moo:System ;
+            rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
+            rdfs:label "hasSubsystem" ;
+.
+
+moo:hasFunction rdf:type owl:ObjectProperty ;
+            rdfs:domain moo:DesignedArtifact ;
+            rdfs:range moo:Function ;
+            rdfs:label "hasFunction"
+.
+
+moo:isDescribedBy rdf:type owl:ObjectProperty ;
+            rdfs:domain moo:DesignedArtifact ;
+            rdfs:range moo:Design ;
+            rdfs:label "isDescribedBy"
+.
+
+#################################################################
+#    Classes
+#################################################################
+
+### http://semanticscience.org/resource/Function
+sio:Function rdf:type owl:Class ;
+            rdfs:label "sio:Function" ;
+            rdfs:comment "capability that satisfies some agentive objective" ;
+            rdfs:isDefinedBy: <http://semanticscience.org/ontology/sio.owl> .
+            
+### http://semanticscience.org/resource/Design
+sio:Design rdf:type owl:Class ;
+            rdfs:label "sio:Design" ;
+            rdfs:comment "A specification of an object, manifested by an agent, intended to accomplish goals, in a particular environment, using a set of primitive components, satisfying a set of requirements, subject to constraints." ;
+            rdfs:isDefinedBy <http://semanticscience.org/ontology/sio.owl> .
+
+### http://semanticscience.org/resource/specialized material entity
+sio:SpecializedMaterialEntity rdf:type owl:Class ;
+            rdfs:label "sio:SpecializedMaterialEntity" ;
+            rdfs:comment "A specialized material entity is a material entity that is defined by having some quality, role or capability." ;
+            rdfs:isDefinedBy <http://semanticscience.org/ontology/sio.owl> .
+
+### http://www.w3.org/ns/dcat#Dataset
+dcat:Dataset rdf:type owl:Class ;
+            rdfs:label "dcat:Dataset" ;
+            rdfs:isDefinedBy <http://www.w3.org/ns/dcat> .
+
+### https://w3id.org/moo/ont/designArtifactArtificialPhysicalObject
+
+moo:ArtificialPhysicalObject rdf:type owl:Class ;
+            rdfs:label "moo:ArtificialPhysicalObject" ;
+            rdfs:subClassOf sio:SpecializedMaterialEntity
+.
+
+###  https://w3id.org/moo/ont/designedArtifactDesign
+moo:Design rdf:type owl:Class ;
+            rdfs:label "Design" ;
+            rdfs:subClassOf dcat:Dataset ;
+            rdfs:subClassOf sio:Design
+.
+
+###  https://w3id.org/moo/ont/designedArtifactDesignedArtifact
+moo:DesignedArtifact rdf:type owl:Class ;
+            rdfs:label "DesignedArtifact" ;
+            rdfs:subClassOf moo:ArtificialPhysicalObject
+.
+
+### https://w3id.org/moo/ont/designedArtifactSystem
+moo:System rdf:type owl:Class ;
+            rdfs:label "System" ;
+            rdfs:subClassOf moo:DesignedArtifact
+.
+
+###  https://w3id.org/moo/ont/designedArtifactFunction
+moo:Function rdf:type owl:Class ;
+            rdfs:label "Function" ;
+            rdfs:subClassOf sio:Function
+.
+
+###  https://w3id.org/moo/ont/designedArtifactComponent
+moo:Component rdf:type owl:Class ; 
+            rdfs:label "Component" ;
+            rdfs:subClassOf moo:DesignedArtifact
+.
+
+###  https://w3id.org/moo/ont/designedArtifactWorkpiece
+moo:Workpiece rdf:type owl:Class ;
+            rdfs:label "Workpiece" ;
+            rdfs:subClassOf moo:Component
+.
+
+
+
+
+
+
+        
+
+
+

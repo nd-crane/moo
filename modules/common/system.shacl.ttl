@@ -1,0 +1,104 @@
+# baseURI: https://w3id.org/moo/shapes/shacl/
+# imports: https://w3id.org/moo/ont/
+# prefix: moosh
+
+@prefix : <https://w3id.org/moo/shapes/shacl/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix moosh: <https://w3id.org/moo/shapes/shacl/> .
+@prefix moo: <https://w3id.org/moo/ont/moo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/spec/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@base <https://w3id.org/moo/shapes/shacl/> .
+
+moosh:DesignedPhysicalSystemShape
+    rdf:type sh:NodeShape ;
+    sh:targetClass moo:DesignedPhysicalSystem_5b5f51a9 ;
+    # Designed Physical Systems have 0 or more subsystems
+    sh:property [
+        sh:path moo:hasSubsystem ;
+        sh:class moo:DesignedPhysicalSystem_5b5f51a9 ;
+        sh:minCount 0 ;
+        sh:name "Subsystem" ;
+        sh:nodeKind sh:IRI ;
+    ];
+
+    # Designed Physical Systems have 0 or more Designed Components
+    sh:property [
+        sh:path moo:hasComponent ;
+        sh:class moo:DesignedComponent ;
+        sh:minCount 0 ;
+        sh:name "Designed Component" ;
+        sh:nodeKind sh:IRI ;
+
+    ];
+
+    # Designed Physical Systems has 1 and only 1 System Identifier
+    sh:property [
+        sh:path moo:hasidentifier ;
+        sh:class moo:SystemIdentifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "System Identifier" ;
+        sh:nodeKind sh:IRI ;
+        sh:severity sh:Violation ;
+        sh:resultMessage "Each identifier MUST have 1 system identifier" ;
+
+    ]
+.
+
+moosh:DesignedComponentShape
+    rdf:type sh:NodeShape ;
+    sh:TargetClass moo:DesignedComponent ;
+    sh:property [
+        sh:path moo:hasidentifier ;
+        sh:class moo:ComponentIdentifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "Component Identifier" ;
+        sh:nodeKind sh:IRI ;
+        sh:severity sh:Violation ;
+        sh:resultMessage "Each Designed Component must have 1 Component Identifier" ;
+    ] ;
+    sh:property [
+        sh:path moo:isComponentOf ;
+        sh:class moo:DesignedPhysicalSystem_5b5f51a9 ;
+        sh:minCount 0;
+        sh:name "Designed Physical System" ;
+        sh:nodeKind sh:IRI ;
+    ]
+.
+
+moosh:SystemIdentifierShape
+    rdf:type sh:NodeShape ;
+    sh:TargetClass moo:SystemIdentifier ;
+    sh:class moo:SystemIdentifierType ;
+    sh:property [
+        sh:minCount 0;
+        sh:maxCount 1;
+        sh:name "System Identifier Type" ;
+        sh:nodeKind sh:IRI ;
+        sh:severity sh:Violation ;
+        sh:resultMessage "Each system identifier must have a maximum of 1 system identifier type." ;
+    ]
+.
+
+moosh:ComponentIdentifierShape
+    rdf:type sh:NodeShape ;
+    sh:TargetClass moo:ComponentIdentifier ;
+    sh:class moo:ComponentIdentifierType ;
+    sh:property [
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "Component Identifier Type" ;
+        sh:nodeKind sh:IRI ;
+        sh:severity sh:Violation ;
+        sh:resultMessage "Each component identifier must have a maximum of 1 component identifier type." ;
+    ]
+.
+  
