@@ -47,7 +47,7 @@ moosh:DesignedPhysicalSystemShape
         sh:name "System Identifier" ;
         sh:nodeKind sh:IRI ;
         sh:severity sh:Violation ;
-        sh:resultMessage "Each identifier MUST have 1 system identifier"
+        sh:resultMessage "Each identifier MUST have 1 system identifier" ;
 
     ]
 .
@@ -63,8 +63,7 @@ moosh:DesignedComponentShape
         sh:name "Component Identifier" ;
         sh:nodeKind sh:IRI ;
         sh:severity sh:Violation ;
-        sh:resultMessage "Each Designed Component must have 1 Component Identifier"
-
+        sh:resultMessage "Each Designed Component must have 1 Component Identifier" ;
     ] ;
     sh:property [
         sh:path moo:isComponentOf ;
@@ -85,7 +84,7 @@ moosh:SystemIdentifierShape
         sh:name "System Identifier Type" ;
         sh:nodeKind sh:IRI ;
         sh:severity sh:Violation ;
-        sh:resultMessage "Each system identifier must have a maximum of 1 system identifier type."
+        sh:resultMessage "Each system identifier must have a maximum of 1 system identifier type." ;
     ]
 .
 
@@ -99,7 +98,7 @@ moosh:ComponentIdentifierShape
         sh:name "Component Identifier Type" ;
         sh:nodeKind sh:IRI ;
         sh:severity sh:Violation ;
-        sh:resultMessage "Each component identifier must have a maximum of 1 component identifier type."
+        sh:resultMessage "Each component identifier must have a maximum of 1 component identifier type." ;
     ]
 .
   
