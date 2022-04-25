@@ -1,0 +1,25 @@
+@prefix : <https://w3id.org/moo/shapes/shacl/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix moosh: <https://w3id.org/moo/shapes/shacl/> .
+@prefix moo: <https://w3id.org/moo/ont/moo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/spec/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@base <https://w3id.org/moo/shapes/shacl/> .
+
+#valid Designed Physical System
+:ae950436-65db-4814-9677-25ff5ba86165 a moo:DesignedPhysicalSystem_5b5f51a9 
+    moo:hasidentifier :fa84d51c-e767-4c54-abc3-68e7563203a1 ;
+.
+
+:fa84d51c-e767-4c54-abc3-68e7563203a1 a moo:SystemIdentifier
+    moo:hasidentifiertype :2f6b2d51-c2ab-4309-a12d-1a5e270c92f0 ;
+    moo:identifierAsText "foo"^^xsd:string ;
+.
+
+:2f6b2d51-c2ab-4309-a12d-1a5e270c92f0 a moo:SystemIdentifierType .
