@@ -17,7 +17,7 @@
 
 
 @prefix moo: <https://w3id.org/moo/ont/moo/> .
-@prefix moosh: <https://w3id.org/moo/shapes/shacl/>
+@prefix moosh: <https://w3id.org/moo/shapes/shacl/> .
 @base <https://w3id.org/moo/ont/moo/> .
 
 <https://w3id.org/moo/ont/moo> rdf:type owl:Ontology ;

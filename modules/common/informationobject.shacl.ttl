@@ -38,7 +38,7 @@ moosh:IdentifierShape
         sh:or(
             [sh:datatype xsd:string ]
             [sh:datatype xsd:anyURI]
-        )
+        );
         sh:minCount 1 ;
         sh:name "Identifier value" ;
         sh:severity sh:Violation ;
