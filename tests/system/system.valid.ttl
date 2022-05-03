@@ -12,5 +12,14 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @base <https://w3id.org/moo/shapes/shacl/> .
 
-#invalid Designed Physical System
-:ae950436-65db-4814-9677-25ff5ba86165 a moo:DesignedPhysicalSystem_5b5f51a9
+#valid Designed Physical System
+:ae950436-65db-4814-9677-25ff5ba86165 a moo:DesignedPhysicalSystem_5b5f51a9 
+    moo:hasidentifier :fa84d51c-e767-4c54-abc3-68e7563203a1 ;
+.
+
+:fa84d51c-e767-4c54-abc3-68e7563203a1 a moo:SystemIdentifier
+    moo:hasidentifiertype :2f6b2d51-c2ab-4309-a12d-1a5e270c92f0 ;
+    moo:identifierAsText "foo"^^xsd:string ;
+.
+
+:2f6b2d51-c2ab-4309-a12d-1a5e270c92f0 a moo:SystemIdentifierType .
