@@ -37,6 +37,11 @@ moosh:IdentifierShape
         sh:path moo:identifierAsText ;
         sh:datatype xsd:string ;
         sh:minCount 0 ;
+        sh:or(
+            [sh:datatype xsd:string ]
+            [sh:datatype xsd:anyURI]
+        );
+        sh:minCount 1 ;
         sh:name "Identifier value" ;
         sh:severity sh:Violation ;
         sh:resultMessage "Each identifier MUST have a string for the actual identifer"@en ;

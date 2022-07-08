@@ -1,0 +1,146 @@
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix moo: <https://w3id.org/moo/ont/moo/> .
+@prefix moosh: <https://w3id.org/moo/shapes/shacl/> .
+@prefix ont: <https://w3id.org/moo/ont/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+moo:EventShape a sh:NodeShape ;
+    sh:property [ sh:class moo:Place ;
+            sh:description "Geosparql Spatial Object "@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Place" ;
+            sh:nodeKind sh:IRI ;
+            sh:path moo:occursAtPlace ;
+            sh:severity sh:Violation ],
+        [ sh:class moo:TimeEntity ;
+            sh:description "OWL Time Temporal entity"@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Time" ;
+            sh:nodeKind sh:IRI ;
+            sh:path moo:occursAtTime ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass moo:Event .
+
+moo:SiteIdentifierShape a sh:NodeShape ;
+    sh:property [ sh:class moo:SiteIdentifierType ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Identifier Type" ;
+            sh:nodeKind sh:IRI ;
+            sh:path moo:hasSiteIdentifierType ;
+            sh:resultMessage "Each identifier MUST have a type"@en ;
+            sh:severity sh:Violation ],
+        [ sh:minCount 1 ;
+            sh:name "Identifier value" ;
+            sh:or ( [ sh:datatype xsd:string ] [ sh:datatype xsd:anyURI ] ) ;
+            sh:path moo:identifierAsText ;
+            sh:resultMessage "Each identifier MUST have a string for the actual identifer"@en ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass moo:SiteIdentifier .
+
+moo:SiteShape a sh:NodeShape ;
+    sh:property [ sh:class moo:SiteIdentifier ;
+            sh:description "Site Identifier "@en ;
+            sh:minCount 0 ;
+            sh:name "Site Identifier" ;
+            sh:nodeKind sh:IRI ;
+            sh:path moo:hasSiteIdentifier ],
+        [ sh:class geo:Geometry ;
+            sh:description "Geosparql Geometry"@en ;
+            sh:minCount 0 ;
+            sh:name "Geometry" ;
+            sh:nodeKind sh:IRI ;
+            sh:path moo:hasGeometry ] ;
+    sh:targetClass moo:Site .
+
+moosh: a owl:Ontology ;
+    owl:imports ont: .
+
+moosh:ComponentIdentifierShape a sh:NodeShape ;
+    sh:TargetClass moo:ComponentIdentifier ;
+    sh:class moo:ComponentIdentifierType ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:name "Component Identifier Type" ;
+            sh:nodeKind sh:IRI ;
+            sh:resultMessage "Each component identifier must have a maximum of 1 component identifier type." ;
+            sh:severity sh:Violation ] .
+
+moosh:DesignedComponentShape a sh:NodeShape ;
+    sh:TargetClass moo:DesignedComponent ;
+    sh:property [ sh:class moo:ComponentIdentifier ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Component Identifier" ;
+            sh:nodeKind sh:IRI ;
+            sh:path moo:hasidentifier ;
+            sh:resultMessage "Each Designed Component must have 1 Component Identifier" ;
+            sh:severity sh:Violation ],
+        [ sh:class moo:DesignedPhysicalSystem_5b5f51a9 ;
+            sh:minCount 0 ;
+            sh:name "Designed Physical System" ;
+            sh:nodeKind sh:IRI ;
+            sh:path moo:isComponentOf ] .
+
+moosh:DesignedPhysicalSystemShape a sh:NodeShape ;
+    sh:property [ sh:class moo:DesignedPhysicalSystem_5b5f51a9 ;
+            sh:minCount 0 ;
+            sh:name "Subsystem" ;
+            sh:nodeKind sh:IRI ;
+            sh:path moo:hasSubsystem ],
+        [ sh:class moo:DesignedComponent ;
+            sh:minCount 0 ;
+            sh:name "Designed Component" ;
+            sh:nodeKind sh:IRI ;
+            sh:path moo:hasComponent ],
+        [ sh:class moo:SystemIdentifier ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "System Identifier" ;
+            sh:nodeKind sh:IRI ;
+            sh:path moo:hasidentifier ;
+            sh:resultMessage "Each identifier MUST have 1 system identifier" ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass moo:DesignedPhysicalSystem_5b5f51a9 .
+
+moosh:IdentifierShape a sh:NodeShape ;
+    sh:property [ sh:class moo:IdentifierType ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Identifier Type" ;
+            sh:nodeKind sh:IRI ;
+            sh:path moo:hasIdentifierType ;
+            sh:resultMessage "Each identifier MUST have a type"@en ;
+            sh:severity sh:Violation ],
+        [ sh:minCount 1 ;
+            sh:name "Identifier value" ;
+            sh:or ( [ sh:datatype xsd:string ] [ sh:datatype xsd:anyURI ] ) ;
+            sh:path moo:identifierAsText ;
+            sh:resultMessage "Each identifier MUST have a string for the actual identifer"@en ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass moo:Identifier .
+
+moosh:InformationObjectShape a sh:NodeShape ;
+    sh:property [ sh:class moo:InformationRealization ;
+            sh:minCount 0 ;
+            sh:path moo:isRealizedBy ],
+        [ sh:class moo:Identifier ;
+            sh:mincount 0 ;
+            sh:path moo:hasIdentifier ] ;
+    sh:targetClass moo:InformationObject .
+
+moosh:SystemIdentifierShape a sh:NodeShape ;
+    sh:TargetClass moo:SystemIdentifier ;
+    sh:class moo:SystemIdentifierType ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:name "System Identifier Type" ;
+            sh:nodeKind sh:IRI ;
+            sh:resultMessage "Each system identifier must have a maximum of 1 system identifier type." ;
+            sh:severity sh:Violation ] .
+
