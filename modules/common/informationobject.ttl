@@ -69,6 +69,12 @@ moo:identifierAsText rdf:type owl:DatatypeProperty ;
                     rdfs:isDefinedBy moo: ;
                     rdfs:label "identifierAsText"@en .
 
+###   https://w3id.org/moo/shapes/shacl/identifierastext
+moo:identifierAsURI rdf:type owl:DatatypeProperty ;
+                    rdfs:domain moo:Identifier ;
+                    rdfs:range xsd:anyURI ;
+                    rdfs:isDefinedBy moo: ;
+                    rdfs:label "identifierAsText"@en .
 
 #################################################################
 #    Classes

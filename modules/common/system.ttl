@@ -44,7 +44,7 @@ moo:hasSubsystem rdf:type owl:ObjectProperty ;
 
 
 ###  https://w3id.org/moo/ont/hasidentifier
-moo:hasidentifier rdf:type owl:ObjectProperty ;
+moo:hasIdentifier rdf:type owl:ObjectProperty ;
                   rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
                   rdfs:label "hasIdentifier" .
 

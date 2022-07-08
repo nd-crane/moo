@@ -1,0 +1,89 @@
+Unit Indicator,Family Name,Examples (does not limit the application of unit indicators)
+AB,Support for antennas,"Antenna mounts, mast bases, mast sections, towers, etc."
+AM,Amplifiers,"Power, audio, interphone, radio frequency, video, electronic control, etc."
+AS,"Antennas, simple and complex","Arrays, parabolic type, masthead whip or telescopic loop, dipole, reflector, etc."
+BA,"Batteries, primary (non-rechargeable) type","Batteries, battery packs, etc."
+BB,"Batteries, secondary (rechargeable) type","Batteries, battery packs, etc."
+BZ,Alarm units,All types
+C,Controls,"Control boxes, remote tuning controls, etc."
+CA,Computer auxiliary units,"Input/Output, peripherals, etc."
+CC,"Cable assemblies, RF","RF cables, waveguides, transmission lines, etc., with terminals"
+CD,Controlling devices,Complex controlling devices
+CM,Comparators,Compares two or more input signals
+CN,Compensators,"Electrical and/or mechanical compensating, regulating, or attenuating apparatus"
+CP,Computers,Mechanical and/or electronic mathematical calculating devices
+CU,Couplers,"Impedance coupling devices, directional couplers, etc."
+CV,Converters (electronic),"Electronic apparatus for changing the phase frequency, or from “one” medium to “another”"
+CW,Radomes,Radomes
+CX,"Cable assemblies, non-RF","Non-RF cables with terminals, test leads, also composite cables of RF and non-RF conductors"
+CY,Cases and cabinets,Rigid and semi-rigid structures for enclosing or carrying equipment
+D,Dispensers,Chaff
+DA,"Loads, dummy",RF and non-RF test loads
+DI,Data transmission units,Devices for authentication and transferring recorded or generated data over transmitter/receiver links
+DT,Detecting heads,"Magnetic, capacitive, or optical pickup devices, search coils, hydrophones, etc."
+DU,Display Units/Monitors,"All types that are external devices for computers, test sets, etc."
+F,Filter units,"Electronic types, back-pass, low pass, band suppression, noise telephone, filter networks; excludes non-repairable types"
+FO,Fiber optics,"Electrical, electronic, and communications, etc."
+FR,Frequency measuring devices,"Frequency meters, tuned cavity, etc."
+G,"Generators, power",Electrical power generators without prime movers (see PU)
+GO,Goniometers,"Instruments for measuring angles for determination of energy transferred from moving to fixed coil (directional) antennas, etc."
+H,"Head, hand, and chest sets",Includes earphones
+HD,Environmental apparatus,"Heating, cooling, dehumidifying, pressure, vacuum devices, etc."
+ID,"Indiciator units, non-cathode ray tube","Calibrated dials and meters, indicating lights, etc. (see also IP)"
+IM,Intensity measuring devices,"Includes SWR gear, field intensity noise meters, slotted lines, etc."
+IP,"Indicator units, cathode ray tube","Azimuth, elevation, panoramic, etc."
+J,Interface units,"Interconnecting and junction units, etc. Do not use if a more specific indicator applies."
+KG,Key generators,Units generating a pseudorandom sequence of crypto variables using algorithms
+KY,Keying devices,"Mechanical, electrical, and electronic key coders, interrupters, etc."
+LA,Lasers,"Communication, electrical, etc."
+LS,Loudspeakers,Separately housed loudspeakers and intercommunication stations
+M,Microphones,"Radio, telephone, throat, hand, etc."
+MD,"Modulators, demodulators, discriminators","Devices for varying amplitude, frequency, or phase"
+ME,Meters,"Multimeters, vacuum tube voltmeters, power meters, volt-ohm-milliameters, etc."
+MK,Miscellaneous kits,"Maintenance, modification, etc."
+ML,Meteorological devices,"Miscellaneous meteorological equipment, etc."
+MO,Multipurpose,Units that perform two or more functions
+MT,Mountings,"Mountings, racks, frames, stands, etc."
+MU,Memory units,Memory units
+MW,Microwave,"Communications, etc."
+MX,Miscellaneous,Equipment not otherwise classified. Do not use if a better indicator is available
+O,Oscillators,"Master frequency, blocking, multi-vibrators, etc. (for test oscillators: see SG)"
+OC,Oceanographic devices,"Bathythermograph, etc."
+OS,"Oscilloscope, test","Test oscilloscopes, for general test purposes (see IP)"
+PL,Plug-in units,Plug-in units not otherwise classified
+PP,Power supplies,"Non-rotating machine types such as vibrator pack, rectifier, thermoelectric, etc."
+PT,Mapping and plotting units,Electronic types only
+PU,Power equipment,"Rotating power equipment, motor-generators, dynamotors, etc."
+R,Receivers,"Receivers, all types except telephone"
+RB,Robotics,"Electric-mechanical, etc."
+RD,Recorder-Reproducers,"Sound, graphic, tape, wire, film, disc, facsimile, magnetic, mechanical, etc."
+RE,Relay assembly units,"Electrical, electronic, etc."
+RL,Reeling machines,"Mechanisms for dispensing and rewinding antenna or field wire cable, etc."
+RO,Recorders,"Sound, graphic, tape, wire, film, disc, facsimile, magnetic, mechanical, tape and card punch, etc."
+RP,Reproducers,"Sound, graphic, tape, wire, film, disc, facsimile, magnetic, mechanical, punched tape and card readers, etc."
+RR,Reflectors,"Target, confusion, etc., except antenna reflectors (see AS)"
+RT,Receiver and Transmitter,"Radio and radar transceivers, composites of transmitter and receiver, etc."
+S,Shelter,"Protective shelters, etc."
+SA,Switching units,"Manual, impact, motor-driven, pressure-operated, electronic, etc."
+SB,Switchboards,"Telephone, fire control, power distribution, etc."
+SG,"Generator, signal","Test oscillators, noise generators, etc. (see O)"
+SM,Simulators,"Flight, aircraft, target, signal, etc."
+SN,Synchronizers,Equipment to coordinate two or more functions
+SS,Special purpose,Devices performing unique functions
+SU,Optical units,"Electro-optical units, such as night vision, scopes, sights, auto-collimator, viewers, trackers, alignment equipment"
+SY,"Speech, secure",Devices that secure voice transmission/receiving equipment
+T,Transmitters,"Transmitters, all types except telephone"
+TA,Telephone apparatus,Miscellaneous telephone equipment
+TB,Towed body,"Hydrodynamic enclosures used to house transducers, hydrophones, and other electronic equipment"
+TD,Timing devices,"Mechanical and electronic timing devices, range devices, multiplexers, electronic gates, etc."
+TF,Transformers,When used as separate units
+TG,Positioning devices,Tilt and/or train assemblies
+TH,Telegraph apparatus,Miscellaneous telegraph items
+TN,Tuning units,"Receiver, transmitter, antenna, tuning units, etc."
+TR,Transducers,"Sonar transducers, vibration pickups, etc. (see H, LS, and M)"
+TS,Test units,Test and measuring equipment not otherwise classified. Do not use if more specific indicators apply
+TT,Teletypewriter and facsimile apparatus,"Teletype, tape, facsimile miscellaneous equipment"
+TU,Television,Special types
+TW,Tape units,Preprogrammed with operational test and checkout data
+V,Vehicles,"Carts, dollies, vans peculiar to electronic equipment"
+ZM,Impedance measuring devices,"Used for measuring Q, C, L, R, or PF, etc."
