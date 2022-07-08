@@ -1,0 +1,10 @@
+metadata,./modules/core/metadata.ttl
+identifier,./modules/core/identifier.ttl
+mereology,./modules/core/mereology.ttl
+activity, ./modules/core/activity.ttl
+equipment, ./modules/equipment/equipment.ttl
+payload, ./modules/equipment/payload.ttl
+droneeqp, ./modules/equipment/drone-eqp.ttl
+vehicle, ./modules/equipment/vehicle.ttl
+mission, ./modules/activities/mission.ttl
+route, ./modules/core/route.ttl

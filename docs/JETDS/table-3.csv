@@ -1,0 +1,25 @@
+Group Indicator,Family Name,Examples (does not limit the application of group indicators)
+OA,Miscellaneous groups,Groups otherwise not listed.  Do not use if a more specific group indicator applies
+OB,Multiplexer and/or demultiplexer groups,All types
+OD,Indicator groups,All types
+OE,Antenna groups,All types
+OF,Adapter groups,All types
+OG,Amplifier groups,All types
+OH,Simulator groups,All types
+OI,Cryptographic groups,All types
+OJ,Consoles and Console groups,All types
+OK,Control groups,All types
+OL,Data analysis and Data processing groups,All types
+OM,Modulator and/or Demodulator groups,All types
+ON,Interconnecting groups,All types
+OP,Power Supply groups,All non-rotating types
+OQ,Test-Set groups,All types
+OR,Receiver groups,All types
+OS,Satellite groups,All types
+OT,Transmitter groups,All types
+OU,Converter groups,All types
+OV,Generator groups,All types including power generating equipment
+OW,Terminal groups,"Telegraphs, radios, telephones, etc."
+OX,"Coder, Recorder, Interrogator, Transponder groups",All types
+OY,Radar groups,Do not use if more specific indicator applies
+OZ,Radio groups,"Do not use if a more specific indicator (OE, OR, OT, etc.) applies"

@@ -35,16 +35,26 @@ moosh:IdentifierShape
     # Identifiers MUST have one and only one Identifier String or URI;
     sh:property [
         sh:path moo:identifierAsText ;
-        sh:or(
-            [sh:datatype xsd:string ]
-            [sh:datatype xsd:anyURI]
-        )
-        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:minCount 0 ;
         sh:name "Identifier value" ;
         sh:severity sh:Violation ;
         sh:resultMessage "Each identifier MUST have a string for the actual identifer"@en ;
     ]
 .
+
+    # Identifiers MUST have one and only one Identifier String or URI;
+    sh:property [
+        sh:path moo:identifierAsURI ;
+        sh:datatype xsd:anyURI ;
+        sh:minCount 0 ;
+        sh:name "Identifier value" ;
+        sh:severity sh:Violation ;
+        sh:resultMessage "Each identifier MUST have a string for the actual identifer"@en ;
+    ]
+.
+
+
 
 moosh:InformationObjectShape
     a sh:NodeShape ;

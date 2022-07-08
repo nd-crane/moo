@@ -1,0 +1,27 @@
+Installation (1st letter),Type of Equipment (2nd letter),Purpose (3rd letter),Miscellaneous
+A - Piloted Aircraft (includes parachutes and piloted balloons),"A - Invisible Light, Heat Radiation (e.g., infrared)",A - Auxiliary Assembly,"X, Y, Z for changes in voltage, frequency, or phase"
+B - Underwater Mobile (submarine),B - Communications security (was Pigeon) (NSA use only),B - Bombing,Tn for Training versions
+"C - Cryptographic Equipment (was Air, Transportable) (NSA use only)",C - Carrier (electronic wave or signal),"C - Communications (Receiving/Transmitting, two way)",(C)     NSA use only
+"D - Pilotless Carrier (UAV, missile, rocket)","D - Radiac (Radioactivity Detection, Identification, and Computation)","D - Direction Finder, Reconnaissance, and Surveillance",(P)     accepts plugins
+,E - Laser (was NUPAC: Nuclear Protection & Control),E - Ejection and/or Release,(V)     variable items
+"F - Ground, Fixed   *",F - Fiber Optics (was Photographic),,"(- FT, - IN)       identical items with varying lengths"
+"G - Ground, General   *",G - Telegraph or Teletype,G - Fire Control or Search Light Directing,( )        developmental or experimental
+,,H - Recording and/or Reproducing,
+,I - Interphone and Public Address,,
+,J - Electromechanical or Inertial Wire Covered,,
+K - Amphibious (vehicles),K - Telemetering,K - Computing,Automatic Digital Processing Equipment (ADPE)
+,L - Countermeasures,"L - removed (was Searchlight Control, now covered by ""G"")",1. Digital Equipment Only
+"M - Ground, Mobile   *",M - Meteorological,M - Maintenance or Test Assemblies,2. Analog Equipment Only
+,N - Sound in Air,N - Navigational Aids,3. Hybrid (1 & 2 combined)
+,,,4. Input/Output Device
+P - Portable (ie. man-portable),P - Radar,"P - removed (was Reproducing, now covered by ""H"")",5. Magnetic Media
+,Q - Sonar and Underwater Sound,Q - Special or Combination,6. Others
+,R - Radio,R - Receiving or Passive Detecting,
+S - Water (surface ship or buoys),S - Special or Combination,"S - Detecting or Range and Bearing, Search",
+"T - Ground, Transportable   *",T - Telephone (Wire),T - Transmitting,
+U - General Utility (multi use)   *,,,
+"V - Ground, Vehicle   *","V - Visual, Visible Light",,
+W - Water Surface and Underwater combined   *,W - Armament (not otherwise covered),W - Automatic Flight or Remote Control,
+,X - Facsimile or Television,X - Identification and Recognition,
+,Y - Data Processing or Computer,"Y - Surveillance (search, detect, and multiple target tracking) and Control (both fire control and/or air control)",
+Z - Piloted and Pilotless Airborne Vehicles combined   *,Z - Communications (NSA use only),Z - Secure (NSA use only),

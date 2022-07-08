@@ -42,8 +42,7 @@ moosh:DesignedPhysicalSystemShape
     sh:property [
         sh:path moo:hasidentifier ;
         sh:class moo:SystemIdentifier ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
+        sh:minCount 0 ;
         sh:name "System Identifier" ;
         sh:nodeKind sh:IRI ;
         sh:severity sh:Violation ;
@@ -58,8 +57,7 @@ moosh:DesignedComponentShape
     sh:property [
         sh:path moo:hasidentifier ;
         sh:class moo:ComponentIdentifier ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
+        sh:minCount 0 ;
         sh:name "Component Identifier" ;
         sh:nodeKind sh:IRI ;
         sh:severity sh:Violation ;
@@ -74,6 +72,9 @@ moosh:DesignedComponentShape
     ]
 .
 
+# TODO:
+# Look at the axioms for the Identifier pattern to determine if every
+# Identifier MUST have a Identifier Type!
 moosh:SystemIdentifierShape
     rdf:type sh:NodeShape ;
     sh:TargetClass moo:SystemIdentifier ;
@@ -101,4 +102,3 @@ moosh:ComponentIdentifierShape
         sh:resultMessage "Each component identifier must have a maximum of 1 component identifier type." ;
     ]
 .
-  

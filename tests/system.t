@@ -12,9 +12,9 @@ TESTDIR="$SHARNESS_TEST_DIRECTORY/system"
 MODULEDIR="$SHARNESS_TEST_DIRECTORY/../modules/common"
 ONTDIR="$SHARNESS_TEST_DIRECTORY/../"
 
-test_expect_failure "Test system pattern failure nodes " "
-    pdm run pyshacl -m -i rdfs -e '$MODULEDIR/system.ttl' -s '$MODULEDIR/system.shacl.ttl' '$TESTDIR/system.invalid.ttl'
-"
+#test_expect_failure "Test system pattern failure nodes " "
+#    pdm run pyshacl -m -i rdfs -e '$MODULEDIR/system.ttl' -s '$MODULEDIR/system.shacl.ttl' '$TESTDIR/system.invalid.ttl'
+#"
 
 # test_expect_failure "Test system pattern failure nodes " "
 #     pdm run pyshacl -m -e '$MODULEDIR/system.ttl' -s '$MODULEDIR/system.shacl.ttl' '$TESTDIR/system.invalid.ttl' -f human
