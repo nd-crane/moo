@@ -6,8 +6,8 @@ mergecmd="pdm run python ${pdmdir}/lib/rdfx/rdfx_cli.py"
 pylodecmd="pdm run pylode"
 files=$(cat tests/modules.txt | awk -F, '{print $2}')
 shapefiles=$(cat tests/shapes.txt | awk -F, '{print $2}')
-ONTOLOGY=drone
-SHACL=drone.shacl
+ONTOLOGY=moo
+SHACL=moo.shacl
 
 JENAVERSION="4.5.0"
 
