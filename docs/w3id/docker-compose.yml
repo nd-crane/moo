@@ -1,0 +1,14 @@
+version: "3"
+services: 
+    apache: 
+        build: .
+        image: w3id-httpd
+        volumes: 
+            - ./htaccess:/var/www/html/drone/.htaccess
+            - ./ont/htaccess:/var/www/html/drone/ont/.htaccess
+            - ./shapes/shacl/htaccess:/var/www/html/drone/shapes/shacl/.htaccess
+            - ./apache2.conf:/etc/apache2/apache2.conf
+        command: bash -c "service apache2 start && tail -f /dev/null"
+        ports:
+            - "8000:80"
+        container_name: httpd

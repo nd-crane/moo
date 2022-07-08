@@ -1,0 +1,5 @@
+/drone
+/drone/ont
+/drone/ont/0.1.0
+/drone/shapes/shacl
+/drone/shapes/shacl/0.1.0
