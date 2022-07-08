@@ -16,7 +16,7 @@
 @prefix cpannotationschema: <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#> .
 
 
-@prefix moo: <https://w3id.org/moo/ont/moo/> .
+@prefix moo: <https://w3id.org/moo/ont/> .
 @prefix moosh: <https://w3id.org/moo/shapes/shacl/> .
 @base <https://w3id.org/moo/ont/moo/> .
 
