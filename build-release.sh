@@ -17,7 +17,7 @@ else
     RIOT="riot"
 fi
 
-VERSION=` grep -i versionInfo modules/core/metadata.ttl | sed 's/[^"]*"\([^"]*\).*/\1/'`
+VERSION=` grep -i versionInfo modules/common/metadata.ttl | sed 's/[^"]*"\([^"]*\).*/\1/'`
 
 # Make sure the version directory exists
 if [ ! -d "./release/ontology/${VERSION}" ]; then

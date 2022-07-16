@@ -1,0 +1,94 @@
+<https://w3id.org/moo/ont/moo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/moo/ont/moo> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/moo/ont/0.1> .
+<https://w3id.org/moo/ont/moo> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/2006/time> .
+<https://w3id.org/moo/ont/moo> <http://www.w3.org/2002/07/owl#imports> <https://raw.githubusercontent.com/opengeospatial/ogc-geosparql/master/1.1/geo.ttl> .
+<https://w3id.org/moo/ont/moo> <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0001-8214-7177> .
+<https://w3id.org/moo/ont/moo> <http://purl.org/dc/terms/created> "2022-02-15"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/moo/ont/moo> <http://purl.org/dc/terms/creator> <https://orcid.org/0000-0003-4091-6059> .
+<https://w3id.org/moo/ont/moo> <http://purl.org/dc/terms/description> "Ontology to support the use of additive manufacturing for the production of parts in maintenance operations."@en .
+<https://w3id.org/moo/ont/moo> <http://purl.org/dc/terms/license> <https://spdx.org/licenses/CC-BY-4.0> .
+<https://w3id.org/moo/ont/moo> <http://purl.org/dc/terms/modified> "2022-02-21"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/moo/ont/moo> <http://purl.org/dc/terms/publisher> <http://wikidata.org/entity/Q178848> .
+<https://w3id.org/moo/ont/moo> <http://purl.org/dc/terms/rights> "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en .
+<https://w3id.org/moo/ont/moo> <http://purl.org/dc/terms/title> "Maintancence Operations Ontology"@en .
+<https://w3id.org/moo/ont/moo> <http://purl.org/vocab/vann/preferredNamespacePrefix> "moo"@en .
+<https://w3id.org/moo/ont/moo> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://w3id.org/moo/ont/moo/" .
+<https://w3id.org/moo/ont/moo> <http://www.w3.org/2002/07/owl#versionInfo> "0.0.1"@en .
+<https://w3id.org/moo/ont/moo> <http://www.w3.org/2004/02/skos/core#historyNote> "Version 0.0.1 is the first release of the core ontology constructed from the Agent, Event, and Designed Artifact System Patterns\n                * Creation of Core Module\n                * Creation of Units Module and alignment to QUDT"@en .
+<https://w3id.org/moo/ont/moo> <https://schema.org/sdo/license> "https://spdx.org/licenses/CC-BY-4.0"@en .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/sdo/email
+<https://schema.org/sdo/email> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/sdo/license
+<https://schema.org/sdo/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/sdo/name
+<https://schema.org/sdo/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/sdo/url
+<https://schema.org/sdo/url> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://schema.org/sdo/Organization
+<https://schema.org/sdo/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://schema.org/sdo/Person
+<https://schema.org/sdo/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://wikidata.org/entity/Q108576266
+<http://wikidata.org/entity/Q108576266> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://wikidata.org/entity/Q108576266> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/sdo/Organization> .
+<http://wikidata.org/entity/Q108576266> <https://schema.org/sdo/name> "Center for Research Computing"@en .
+<http://wikidata.org/entity/Q108576266> <https://schema.org/sdo/url> "https://crc.nd.edu"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+# 
+# http://wikidata.org/entity/Q178848
+<http://wikidata.org/entity/Q178848> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://wikidata.org/entity/Q178848> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/sdo/Organization> .
+<http://wikidata.org/entity/Q178848> <https://schema.org/sdo/name> "University of Notre Dame"@en .
+<http://wikidata.org/entity/Q178848> <https://schema.org/sdo/url> "https://crc.nd.edu"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+# 
+# https://orcid.org/0000-0001-8214-7177
+<https://orcid.org/0000-0001-8214-7177> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://orcid.org/0000-0001-8214-7177> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/sdo/Person> .
+<https://orcid.org/0000-0001-8214-7177> <https://schema.org/sdo/email> "csweet1@nd.edu"@en .
+<https://orcid.org/0000-0001-8214-7177> <https://schema.org/sdo/name> "Christopher Sweet"@en .
+# 
+# https://orcid.org/0000-0003-4091-6059
+<https://orcid.org/0000-0003-4091-6059> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://orcid.org/0000-0003-4091-6059> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/sdo/Person> .
+<https://orcid.org/0000-0003-4091-6059> <https://schema.org/sdo/email> "cvardema@nd.edu"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://orcid.org/0000-0003-4091-6059> <https://schema.org/sdo/name> "Charles F Vardeman II" .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

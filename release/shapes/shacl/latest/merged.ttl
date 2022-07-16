@@ -1,0 +1,46 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix moo: <https://w3id.org/moo/ont/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix sdo: <https://schema.org/sdo/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix wd: <http://wikidata.org/entity/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+wd:Q108576266 a sdo:Organization ;
+    sdo:name "Center for Research Computing"@en ;
+    sdo:url "https://crc.nd.edu"^^xsd:anyURI .
+
+moo:moo a owl:Ontology ;
+    dcterms:contributor <https://orcid.org/0000-0001-8214-7177> ;
+    dcterms:created "2022-02-15"^^xsd:date ;
+    dcterms:creator <https://orcid.org/0000-0003-4091-6059> ;
+    dcterms:description "Ontology to support the use of additive manufacturing for the production of parts in maintenance operations."@en ;
+    dcterms:license <https://spdx.org/licenses/CC-BY-4.0> ;
+    dcterms:modified "2022-02-21"^^xsd:date ;
+    dcterms:publisher wd:Q178848 ;
+    dcterms:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
+    dcterms:title "Maintancence Operations Ontology"@en ;
+    vann:preferredNamespacePrefix "moo"@en ;
+    vann:preferredNamespaceUri "http://w3id.org/moo/ont/moo/" ;
+    owl:imports <http://www.w3.org/2006/time>,
+        <https://raw.githubusercontent.com/opengeospatial/ogc-geosparql/master/1.1/geo.ttl> ;
+    owl:versionIRI moo:0.1 ;
+    owl:versionInfo "0.0.1"@en ;
+    skos:historyNote """Version 0.0.1 is the first release of the core ontology constructed from the Agent, Event, and Designed Artifact System Patterns
+                * Creation of Core Module
+                * Creation of Units Module and alignment to QUDT"""@en ;
+    sdo:license "https://spdx.org/licenses/CC-BY-4.0"@en .
+
+wd:Q178848 a sdo:Organization ;
+    sdo:name "University of Notre Dame"@en ;
+    sdo:url "https://crc.nd.edu"^^xsd:anyURI .
+
+<https://orcid.org/0000-0001-8214-7177> a sdo:Person ;
+    sdo:email "csweet1@nd.edu"@en ;
+    sdo:name "Christopher Sweet"@en .
+
+<https://orcid.org/0000-0003-4091-6059> a sdo:Person ;
+    sdo:email "cvardema@nd.edu"^^xsd:anyURI ;
+    sdo:name "Charles F Vardeman II" .
+

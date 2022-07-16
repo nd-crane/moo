@@ -1,0 +1,142 @@
+[ {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://wikidata.org/entity/Q108576266",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://schema.org/sdo/Organization"
+  } ],
+  "https://schema.org/sdo/name" : [ {
+    "@language" : "en",
+    "@value" : "Center for Research Computing"
+  } ],
+  "https://schema.org/sdo/url" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "https://crc.nd.edu"
+  } ]
+}, {
+  "@id" : "http://wikidata.org/entity/Q178848",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://schema.org/sdo/Organization"
+  } ],
+  "https://schema.org/sdo/name" : [ {
+    "@language" : "en",
+    "@value" : "University of Notre Dame"
+  } ],
+  "https://schema.org/sdo/url" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "https://crc.nd.edu"
+  } ]
+}, {
+  "@id" : "https://orcid.org/0000-0001-8214-7177",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://schema.org/sdo/Person"
+  } ],
+  "https://schema.org/sdo/email" : [ {
+    "@language" : "en",
+    "@value" : "csweet1@nd.edu"
+  } ],
+  "https://schema.org/sdo/name" : [ {
+    "@language" : "en",
+    "@value" : "Christopher Sweet"
+  } ]
+}, {
+  "@id" : "https://orcid.org/0000-0003-4091-6059",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://schema.org/sdo/Person"
+  } ],
+  "https://schema.org/sdo/email" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "cvardema@nd.edu"
+  } ],
+  "https://schema.org/sdo/name" : [ {
+    "@value" : "Charles F Vardeman II"
+  } ]
+}, {
+  "@id" : "https://schema.org/sdo/Organization",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://schema.org/sdo/Person",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://schema.org/sdo/email",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://schema.org/sdo/license",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://schema.org/sdo/name",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://schema.org/sdo/url",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://w3id.org/moo/ont/moo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/terms/contributor" : [ {
+    "@id" : "https://orcid.org/0000-0001-8214-7177"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2022-02-15"
+  } ],
+  "http://purl.org/dc/terms/creator" : [ {
+    "@id" : "https://orcid.org/0000-0003-4091-6059"
+  } ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Ontology to support the use of additive manufacturing for the production of parts in maintenance operations."
+  } ],
+  "http://purl.org/dc/terms/license" : [ {
+    "@id" : "https://spdx.org/licenses/CC-BY-4.0"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2022-02-21"
+  } ],
+  "http://purl.org/dc/terms/publisher" : [ {
+    "@id" : "http://wikidata.org/entity/Q178848"
+  } ],
+  "http://purl.org/dc/terms/rights" : [ {
+    "@language" : "en",
+    "@value" : "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"
+  } ],
+  "http://purl.org/dc/terms/title" : [ {
+    "@language" : "en",
+    "@value" : "Maintancence Operations Ontology"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
+    "@language" : "en",
+    "@value" : "moo"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
+    "@value" : "http://w3id.org/moo/ont/moo/"
+  } ],
+  "http://www.w3.org/2002/07/owl#imports" : [ {
+    "@id" : "http://www.w3.org/2006/time"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/opengeospatial/ogc-geosparql/master/1.1/geo.ttl"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionIRI" : [ {
+    "@id" : "https://w3id.org/moo/ont/0.1"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@language" : "en",
+    "@value" : "0.0.1"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#historyNote" : [ {
+    "@language" : "en",
+    "@value" : "Version 0.0.1 is the first release of the core ontology constructed from the Agent, Event, and Designed Artifact System Patterns\n                * Creation of Core Module\n                * Creation of Units Module and alignment to QUDT"
+  } ],
+  "https://schema.org/sdo/license" : [ {
+    "@language" : "en",
+    "@value" : "https://spdx.org/licenses/CC-BY-4.0"
+  } ]
+} ]
