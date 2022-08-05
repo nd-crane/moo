@@ -1,11 +1,13 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="https://w3id.org/moo/ont/moo#"
      xml:base="https://w3id.org/moo/ont/moo"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:sdo="https://schema.org/sdo/"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:prov="http://www.w3.org/ns/prov#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:vann="http://purl.org/vocab/vann/"
@@ -13,25 +15,43 @@
      xmlns:schema="https://schema.org/">
     <owl:Ontology rdf:about="https://w3id.org/moo/ont/moo">
         <owl:versionIRI rdf:resource="https://w3id.org/moo/ont/0.1"/>
+        <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql"/>
         <owl:imports rdf:resource="http://www.w3.org/2006/time"/>
         <owl:imports rdf:resource="https://raw.githubusercontent.com/opengeospatial/ogc-geosparql/master/1.1/geo.ttl"/>
-        <terms:contributor rdf:resource="https://orcid.org/0000-0001-8214-7177"/>
+        <owl:imports rdf:resource="https://www.w3.org/ns/prov-o"/>
         <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-15</terms:created>
-        <terms:creator rdf:resource="https://orcid.org/0000-0003-4091-6059"/>
+        <terms:creator rdf:nodeID="genid1"/>
         <terms:description xml:lang="en">Ontology to support the use of additive manufacturing for the production of parts in maintenance operations.</terms:description>
         <terms:license rdf:resource="https://spdx.org/licenses/CC-BY-4.0"/>
         <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-21</terms:modified>
         <terms:publisher rdf:resource="http://wikidata.org/entity/Q178848"/>
+        <terms:publisher rdf:nodeID="genid2"/>
         <terms:rights xml:lang="en">This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</terms:rights>
         <terms:title xml:lang="en">Maintancence Operations Ontology</terms:title>
         <vann:preferredNamespacePrefix xml:lang="en">moo</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>http://w3id.org/moo/ont/moo/</vann:preferredNamespaceUri>
-        <owl:versionInfo xml:lang="en">0.0.1</owl:versionInfo>
+        <rdfs:comment>Event Module for the Additive Manufacturing and  Maintenance Operations Ontology</rdfs:comment>
+        <rdfs:comment>Ontology Design Pattern for Designed Artifact that includes system and component.</rdfs:comment>
+        <rdfs:label>Event Core Pattern</rdfs:label>
+        <rdfs:label>System Pattern</rdfs:label>
+        <owl:versionInfo xml:lang="en">0.1.0</owl:versionInfo>
         <skos:historyNote xml:lang="en">Version 0.0.1 is the first release of the core ontology constructed from the Agent, Event, and Designed Artifact System Patterns
                 * Creation of Core Module
                 * Creation of Units Module and alignment to QUDT</skos:historyNote>
         <sdo:license xml:lang="en">https://spdx.org/licenses/CC-BY-4.0</sdo:license>
     </owl:Ontology>
+    <rdf:Description rdf:nodeID="genid1">
+        <rdf:type rdf:resource="https://schema.org/sdo/Person"/>
+        <sdo:affiliation>University of Notre Dame</sdo:affiliation>
+        <sdo:email rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">cvardema@nd.edu</sdo:email>
+        <sdo:name>Charles F. Vardeman II</sdo:name>
+        <sdo:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://orcid.org/0000-0003-4091-6059</sdo:url>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid2">
+        <rdf:type rdf:resource="https://schema.org/sdo/Organization"/>
+        <sdo:name>Center for Research Computing, University of Notre Dame</sdo:name>
+        <sdo:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://crc.nd.edu</sdo:url>
+    </rdf:Description>
     
 
 
@@ -47,6 +67,20 @@
     
 
 
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
     <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
 
 
@@ -58,6 +92,13 @@
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- https://schema.org/sdo/affiliation -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/sdo/affiliation"/>
     
 
 
@@ -92,12 +133,272 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000557 -->
+
+
+    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/SIO_000557">
+        <rdfs:domain rdf:resource="https://w3id.org/moo/ont/DesignedArtifact"/>
+        <rdfs:range rdf:resource="https://w3id.org/moo/ont/Design"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>is described by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/moo/ont/eventisDescribedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/moo/ont/eventisDescribedBy">
+        <rdfs:domain rdf:resource="https://w3id.org/moo/ont/eventPlace"/>
+        <rdfs:range rdf:resource="https://w3id.org/moo/ont/eventInformationObject"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>is described by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/moo/ont/eventoccursAtTime -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/moo/ont/eventoccursAtTime">
+        <rdfs:domain rdf:resource="https://w3id.org/moo/ont/eventEvent"/>
+        <rdfs:range rdf:resource="https://w3id.org/moo/ont/eventTimeentity"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>occurs at time</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/moo/ont/hasComponent -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/moo/ont/hasComponent">
+        <rdfs:domain rdf:resource="https://w3id.org/moo/ont/DesignedPhysicalSystem_5b5f51a9-2be8-4051-9988-0203059bbf2b"/>
+        <rdfs:range rdf:resource="https://w3id.org/moo/ont/DesignedComponent"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>has component</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/moo/ont/hasIdentifier -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/moo/ont/hasIdentifier">
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>hasIdentifier</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/moo/ont/hasSiteIdentifier -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/moo/ont/hasSiteIdentifier">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/moo/ont/hasIdentifier"/>
+        <rdfs:domain rdf:resource="https://w3id.org/moo/ont/Site"/>
+        <rdfs:range rdf:resource="https://w3id.org/moo/ont/SiteIdentifier"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>hasSiteIdentifier</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/moo/ont/hasSubsystem -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/moo/ont/hasSubsystem">
+        <rdfs:domain rdf:resource="https://w3id.org/moo/ont/DesignedPhysicalSystem_5b5f51a9-2be8-4051-9988-0203059bbf2b"/>
+        <rdfs:range rdf:resource="https://w3id.org/moo/ont/DesignedPhysicalSystem_5b5f51a9-2be8-4051-9988-0203059bbf2b"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>has SubSystem</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/moo/ont/hasidentifier -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/moo/ont/hasidentifier"/>
+    
+
+
+    <!-- https://w3id.org/moo/ont/hasidentifiertype -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/moo/ont/hasidentifiertype">
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>hasIdentifierType</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/moo/ont/isComponentOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/moo/ont/isComponentOf">
+        <rdfs:domain rdf:resource="https://w3id.org/moo/ont/DesignedComponent"/>
+        <rdfs:range rdf:resource="https://w3id.org/moo/ont/DesignedPhysicalSystem_5b5f51a9-2be8-4051-9988-0203059bbf2b"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>is component of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/moo/ont/isDescribedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/moo/ont/isDescribedBy">
+        <rdfs:domain rdf:resource="https://w3id.org/moo/ont/PhysicalArtifact"/>
+        <rdfs:range rdf:resource="https://w3id.org/moo/ont/Plan"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>is described by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/moo/ont/isperformedby -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/moo/ont/isperformedby">
+        <rdfs:domain rdf:resource="https://w3id.org/moo/ont/Agentrole"/>
+        <rdfs:range rdf:resource="https://w3id.org/moo/ont/eventAgent"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>isPerformedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/moo/ont/occursAtPlace -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/moo/ont/occursAtPlace">
+        <rdfs:domain rdf:resource="https://w3id.org/moo/ont/eventEvent"/>
+        <rdfs:range rdf:resource="https://w3id.org/moo/ont/eventPlace"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>occurs at place</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/moo/ont/performsagentrole -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/moo/ont/performsagentrole">
+        <rdfs:domain rdf:resource="https://w3id.org/moo/ont/eventAgent"/>
+        <rdfs:range rdf:resource="https://w3id.org/moo/ont/Agentrole"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>performsAgentRole</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/moo/ont/providesrole -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/moo/ont/providesrole">
+        <rdfs:domain rdf:resource="https://w3id.org/moo/ont/eventEvent"/>
+        <rdfs:range rdf:resource="https://w3id.org/moo/ont/Participantrole"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>providesRole</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/moo/ont/siteIdentifierType -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/moo/ont/siteIdentifierType">
+        <rdfs:domain rdf:resource="https://w3id.org/moo/ont/SiteIdentifier"/>
+        <rdfs:range rdf:resource="https://w3id.org/moo/ont/SiteIdentifierType"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>siteIdentifierType</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/moo/ont/identifierAsText -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/moo/ont/identifierAsText">
+        <rdfs:domain rdf:resource="https://w3id.org/moo/ont/SiteIdentifier"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>identifierAsText</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
 
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#SpatialObject -->
+
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#SpatialObject">
+        <rdfs:comment>Anything spatial (having or being a shape, position or an extent).</rdfs:comment>
+        <rdfs:label>geosparql:SpatialObject</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2006/time#TemporalEntity -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#TemporalEntity">
+        <rdfs:label>time:TemporalEntity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Agent -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Agent">
+        <rdfs:comment>An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent&apos;s activity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>prov:Agent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#InstantaneousEvent -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#InstantaneousEvent">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov"/>
+        <rdfs:label>prov:InstantaneousEvent</rdfs:label>
+    </owl:Class>
     
 
 
@@ -115,6 +416,335 @@
     
 
 
+    <!-- https://w3id.org/moo/ont/Agent -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/Agent">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>Agent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/moo/ont/Agentrole -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/Agentrole">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/moo/ont/moo/Participantrole"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>AgentRole</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/moo/ont/ComponentIdentifier -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/ComponentIdentifier">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/moo/ont/hasidentifiertype"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/moo/ont/ComponentIdentifierType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>Component Identifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/moo/ont/ComponentIdentifierType -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/ComponentIdentifierType">
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>Component Identifier Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/moo/ont/Design -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/Design">
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>Design</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/moo/ont/DesignedArtifact -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/DesignedArtifact">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/moo/ont/PhysicalArtifact"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>Designed Artifact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/moo/ont/DesignedComponent -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/DesignedComponent">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/moo/ont/DesignedArtifact"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/moo/ont/hasidentifier"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/moo/ont/ComponentIdentifier"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>Designed Component</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/moo/ont/DesignedPhysicalSystem_5b5f51a9-2be8-4051-9988-0203059bbf2b -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/DesignedPhysicalSystem_5b5f51a9-2be8-4051-9988-0203059bbf2b">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/moo/ont/PhysicalArtifact"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/moo/ont/hasidentifier"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/moo/ont/SystemIdentifier"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>Designed Physical System</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/moo/ont/Entity -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/Entity">
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/moo/ont/Event -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/Event">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#InstantaneousEvent"/>
+        <rdfs:comment>An instantaneous event, or event for short, happens in the world and marks a change in the world, in its activities and in its entities. The term &apos;event&apos; is commonly used in process algebra with a similar meaning. Events represent communications or interactions; they are assumed to be atomic and instantaneous.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/moo/ont/Facility -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/Facility">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/moo/ont/Site"/>
+        <dc:creator rdf:resource="http://orcid.org/0000-0003-4091-6059"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-04-12T13:35:16+00:00</dc:date>
+        <rdfs:seeAlso rdf:resource="https://www.wikidata.org/wiki/Q13226383"/>
+        <skos:definition xml:lang="en">Place for doing something</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/moo/ont/IdentiferType -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/IdentiferType"/>
+    
+
+
+    <!-- https://w3id.org/moo/ont/Identifier -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/Identifier"/>
+    
+
+
+    <!-- https://w3id.org/moo/ont/InformationObject -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/InformationObject">
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>Information Object</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/moo/ont/MilitaryFacility -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/MilitaryFacility">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/moo/ont/Facility"/>
+        <dc:creator rdf:resource="http://orcid.org/0000-0003-4091-6059"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-04-12T13:35:35+00:00</dc:date>
+        <rdfs:seeAlso rdf:resource="https://www.wikidata.org/wiki/Q18691599"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/moo/ont/Participantrole -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/Participantrole">
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>ParticipantRole</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/moo/ont/PhysicalArtifact -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/PhysicalArtifact">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/moo/ont/Entity"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>Physical Artifact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/moo/ont/Place -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/Place">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>Place</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/moo/ont/Plan -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/Plan">
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>Plan</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/moo/ont/Site -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/Site">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:comment>The Site Pattern is intended to describe a places of interest (POIs) that is associated with a certain geospatial feature. We model a  site as something that is described by some information object and allows us to attach non-geospatial information (e.g., name, web page, etc.) and my potentially have some spatial footprint, which is a geometric feature in space, e.g. a point, a lin e, etc.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>Site</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/moo/ont/SiteIdentifier -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/SiteIdentifier">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/moo/ont/Identifier"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>Site Identifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/moo/ont/SiteIdentifierType -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/SiteIdentifierType">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/moo/ont/IdentiferType"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>Identifier Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/moo/ont/SystemIdentifier -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/SystemIdentifier">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/moo/ont/hasidentifiertype"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/moo/ont/SystemIdentifierType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>System Identifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/moo/ont/SystemIdentifierType -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/SystemIdentifierType">
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>System Identifier Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/moo/ont/Timeentity -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/Timeentity">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
+        <rdfs:label>TimeEntity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/moo/ont/eventAgent -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/eventAgent"/>
+    
+
+
+    <!-- https://w3id.org/moo/ont/eventEvent -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/eventEvent"/>
+    
+
+
+    <!-- https://w3id.org/moo/ont/eventInformationObject -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/eventInformationObject"/>
+    
+
+
+    <!-- https://w3id.org/moo/ont/eventPlace -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/eventPlace"/>
+    
+
+
+    <!-- https://w3id.org/moo/ont/eventTimeentity -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/eventTimeentity"/>
+    
+
+
+    <!-- https://w3id.org/moo/ont/moo/Participantrole -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/moo/Participantrole"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -127,47 +757,10 @@
     
 
 
-    <!-- http://wikidata.org/entity/Q108576266 -->
-
-
-    <owl:NamedIndividual rdf:about="http://wikidata.org/entity/Q108576266">
-        <rdf:type rdf:resource="https://schema.org/sdo/Organization"/>
-        <sdo:name xml:lang="en">Center for Research Computing</sdo:name>
-        <sdo:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://crc.nd.edu</sdo:url>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://wikidata.org/entity/Q178848 -->
 
 
-    <owl:NamedIndividual rdf:about="http://wikidata.org/entity/Q178848">
-        <rdf:type rdf:resource="https://schema.org/sdo/Organization"/>
-        <sdo:name xml:lang="en">University of Notre Dame</sdo:name>
-        <sdo:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://crc.nd.edu</sdo:url>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://orcid.org/0000-0001-8214-7177 -->
-
-
-    <owl:NamedIndividual rdf:about="https://orcid.org/0000-0001-8214-7177">
-        <rdf:type rdf:resource="https://schema.org/sdo/Person"/>
-        <sdo:email xml:lang="en">csweet1@nd.edu</sdo:email>
-        <sdo:name xml:lang="en">Christopher Sweet</sdo:name>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://orcid.org/0000-0003-4091-6059 -->
-
-
-    <owl:NamedIndividual rdf:about="https://orcid.org/0000-0003-4091-6059">
-        <rdf:type rdf:resource="https://schema.org/sdo/Person"/>
-        <sdo:email rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">cvardema@nd.edu</sdo:email>
-        <sdo:name>Charles F Vardeman II</sdo:name>
-    </owl:NamedIndividual>
+    <rdf:Description rdf:about="http://wikidata.org/entity/Q178848"/>
 </rdf:RDF>
 
 
