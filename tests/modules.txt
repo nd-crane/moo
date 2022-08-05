@@ -1,1 +1,4 @@
 metadata,./modules/common/metadata.ttl
+system, ./modules/common/system.ttl
+site, ./modules/common/site.ttl
+event, ./modules/common/event.ttl

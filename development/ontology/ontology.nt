@@ -1,19 +1,37 @@
 <https://w3id.org/moo/ont/moo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <https://w3id.org/moo/ont/moo> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/moo/ont/0.1> .
+<https://w3id.org/moo/ont/moo> <http://www.w3.org/2002/07/owl#imports> <http://www.opengis.net/ont/geosparql> .
 <https://w3id.org/moo/ont/moo> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/2006/time> .
 <https://w3id.org/moo/ont/moo> <http://www.w3.org/2002/07/owl#imports> <https://raw.githubusercontent.com/opengeospatial/ogc-geosparql/master/1.1/geo.ttl> .
-<https://w3id.org/moo/ont/moo> <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0001-8214-7177> .
+<https://w3id.org/moo/ont/moo> <http://www.w3.org/2002/07/owl#imports> <https://www.w3.org/ns/prov-o> .
 <https://w3id.org/moo/ont/moo> <http://purl.org/dc/terms/created> "2022-02-15"^^<http://www.w3.org/2001/XMLSchema#date> .
-<https://w3id.org/moo/ont/moo> <http://purl.org/dc/terms/creator> <https://orcid.org/0000-0003-4091-6059> .
+<https://w3id.org/moo/ont/moo> <http://purl.org/dc/terms/creator> _:genid1 .
+_:genid1 <https://schema.org/sdo/url> "https://orcid.org/0000-0003-4091-6059"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:genid1 <https://schema.org/sdo/name> "Charles F. Vardeman II" .
+_:genid1 <https://schema.org/sdo/email> "cvardema@nd.edu"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:genid1 <https://schema.org/sdo/affiliation> "University of Notre Dame" .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/sdo/Person> .
+<https://schema.org/sdo/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/moo/ont/moo> <http://purl.org/dc/terms/description> "Ontology to support the use of additive manufacturing for the production of parts in maintenance operations."@en .
 <https://w3id.org/moo/ont/moo> <http://purl.org/dc/terms/license> <https://spdx.org/licenses/CC-BY-4.0> .
 <https://w3id.org/moo/ont/moo> <http://purl.org/dc/terms/modified> "2022-02-21"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/moo/ont/moo> <http://purl.org/dc/terms/publisher> <http://wikidata.org/entity/Q178848> .
+<http://wikidata.org/entity/Q178848> <http://www.w3.org/2002/07/owl#sameAs> _:genid2 .
+_:genid2 <https://schema.org/sdo/url> "https://crc.nd.edu"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:genid2 <https://schema.org/sdo/name> "Center for Research Computing, University of Notre Dame" .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/sdo/Organization> .
+<https://schema.org/sdo/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://wikidata.org/entity/Q178848> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/moo/ont/moo> <http://purl.org/dc/terms/publisher> _:genid2 .
 <https://w3id.org/moo/ont/moo> <http://purl.org/dc/terms/rights> "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en .
 <https://w3id.org/moo/ont/moo> <http://purl.org/dc/terms/title> "Maintancence Operations Ontology"@en .
 <https://w3id.org/moo/ont/moo> <http://purl.org/vocab/vann/preferredNamespacePrefix> "moo"@en .
 <https://w3id.org/moo/ont/moo> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://w3id.org/moo/ont/moo/" .
-<https://w3id.org/moo/ont/moo> <http://www.w3.org/2002/07/owl#versionInfo> "0.0.1"@en .
+<https://w3id.org/moo/ont/moo> <http://www.w3.org/2000/01/rdf-schema#comment> "Event Module for the Additive Manufacturing and  Maintenance Operations Ontology" .
+<https://w3id.org/moo/ont/moo> <http://www.w3.org/2000/01/rdf-schema#comment> "Ontology Design Pattern for Designed Artifact that includes system and component." .
+<https://w3id.org/moo/ont/moo> <http://www.w3.org/2000/01/rdf-schema#label> "Event Core Pattern" .
+<https://w3id.org/moo/ont/moo> <http://www.w3.org/2000/01/rdf-schema#label> "System Pattern" .
+<https://w3id.org/moo/ont/moo> <http://www.w3.org/2002/07/owl#versionInfo> "0.1.0"@en .
 <https://w3id.org/moo/ont/moo> <http://www.w3.org/2004/02/skos/core#historyNote> "Version 0.0.1 is the first release of the core ontology constructed from the Agent, Event, and Designed Artifact System Patterns\n                * Creation of Core Module\n                * Creation of Units Module and alignment to QUDT"@en .
 <https://w3id.org/moo/ont/moo> <https://schema.org/sdo/license> "https://spdx.org/licenses/CC-BY-4.0"@en .
 # 
@@ -25,11 +43,20 @@
 # #################################################################
 # 
 # 
+# http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
 # http://purl.org/vocab/vann/preferredNamespacePrefix
 <http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://purl.org/vocab/vann/preferredNamespaceUri
 <http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/sdo/affiliation
+<https://schema.org/sdo/affiliation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # https://schema.org/sdo/email
 <https://schema.org/sdo/email> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -47,16 +74,338 @@
 # 
 # #################################################################
 # #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://semanticscience.org/resource/SIO_000557
+<http://semanticscience.org/resource/SIO_000557> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://semanticscience.org/resource/SIO_000557> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moo/ont/DesignedArtifact> .
+<http://semanticscience.org/resource/SIO_000557> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moo/ont/Design> .
+<http://semanticscience.org/resource/SIO_000557> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<http://semanticscience.org/resource/SIO_000557> <http://www.w3.org/2000/01/rdf-schema#label> "is described by" .
+# 
+# https://w3id.org/moo/ont/eventisDescribedBy
+<https://w3id.org/moo/ont/eventisDescribedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moo/ont/eventisDescribedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moo/ont/eventPlace> .
+<https://w3id.org/moo/ont/eventPlace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/eventisDescribedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moo/ont/eventInformationObject> .
+<https://w3id.org/moo/ont/eventInformationObject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/eventisDescribedBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/eventisDescribedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is described by" .
+# 
+# https://w3id.org/moo/ont/eventoccursAtTime
+<https://w3id.org/moo/ont/eventoccursAtTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moo/ont/eventoccursAtTime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moo/ont/eventEvent> .
+<https://w3id.org/moo/ont/eventEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/eventoccursAtTime> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moo/ont/eventTimeentity> .
+<https://w3id.org/moo/ont/eventTimeentity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/eventoccursAtTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/eventoccursAtTime> <http://www.w3.org/2000/01/rdf-schema#label> "occurs at time" .
+# 
+# https://w3id.org/moo/ont/hasComponent
+<https://w3id.org/moo/ont/hasComponent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moo/ont/hasComponent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moo/ont/DesignedPhysicalSystem_5b5f51a9-2be8-4051-9988-0203059bbf2b> .
+<https://w3id.org/moo/ont/hasComponent> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moo/ont/DesignedComponent> .
+<https://w3id.org/moo/ont/hasComponent> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/hasComponent> <http://www.w3.org/2000/01/rdf-schema#label> "has component" .
+# 
+# https://w3id.org/moo/ont/hasIdentifier
+<https://w3id.org/moo/ont/hasIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moo/ont/hasIdentifier> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/hasIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "hasIdentifier" .
+# 
+# https://w3id.org/moo/ont/hasSiteIdentifier
+<https://w3id.org/moo/ont/hasSiteIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moo/ont/hasSiteIdentifier> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moo/ont/hasIdentifier> .
+<https://w3id.org/moo/ont/hasSiteIdentifier> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moo/ont/Site> .
+<https://w3id.org/moo/ont/hasSiteIdentifier> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moo/ont/SiteIdentifier> .
+<https://w3id.org/moo/ont/hasSiteIdentifier> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/hasSiteIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "hasSiteIdentifier" .
+# 
+# https://w3id.org/moo/ont/hasSubsystem
+<https://w3id.org/moo/ont/hasSubsystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moo/ont/hasSubsystem> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moo/ont/DesignedPhysicalSystem_5b5f51a9-2be8-4051-9988-0203059bbf2b> .
+<https://w3id.org/moo/ont/hasSubsystem> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moo/ont/DesignedPhysicalSystem_5b5f51a9-2be8-4051-9988-0203059bbf2b> .
+<https://w3id.org/moo/ont/hasSubsystem> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/hasSubsystem> <http://www.w3.org/2000/01/rdf-schema#label> "has SubSystem" .
+# 
+# https://w3id.org/moo/ont/hasidentifier
+<https://w3id.org/moo/ont/hasidentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://w3id.org/moo/ont/hasidentifiertype
+<https://w3id.org/moo/ont/hasidentifiertype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moo/ont/hasidentifiertype> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/hasidentifiertype> <http://www.w3.org/2000/01/rdf-schema#label> "hasIdentifierType" .
+# 
+# https://w3id.org/moo/ont/isComponentOf
+<https://w3id.org/moo/ont/isComponentOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moo/ont/isComponentOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moo/ont/DesignedComponent> .
+<https://w3id.org/moo/ont/isComponentOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moo/ont/DesignedPhysicalSystem_5b5f51a9-2be8-4051-9988-0203059bbf2b> .
+<https://w3id.org/moo/ont/isComponentOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/isComponentOf> <http://www.w3.org/2000/01/rdf-schema#label> "is component of" .
+# 
+# https://w3id.org/moo/ont/isDescribedBy
+<https://w3id.org/moo/ont/isDescribedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moo/ont/isDescribedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moo/ont/PhysicalArtifact> .
+<https://w3id.org/moo/ont/isDescribedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moo/ont/Plan> .
+<https://w3id.org/moo/ont/isDescribedBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/isDescribedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is described by" .
+# 
+# https://w3id.org/moo/ont/isperformedby
+<https://w3id.org/moo/ont/isperformedby> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moo/ont/isperformedby> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moo/ont/Agentrole> .
+<https://w3id.org/moo/ont/isperformedby> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moo/ont/eventAgent> .
+<https://w3id.org/moo/ont/eventAgent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/isperformedby> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/isperformedby> <http://www.w3.org/2000/01/rdf-schema#label> "isPerformedBy" .
+# 
+# https://w3id.org/moo/ont/occursAtPlace
+<https://w3id.org/moo/ont/occursAtPlace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moo/ont/occursAtPlace> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moo/ont/eventEvent> .
+<https://w3id.org/moo/ont/occursAtPlace> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moo/ont/eventPlace> .
+<https://w3id.org/moo/ont/occursAtPlace> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/occursAtPlace> <http://www.w3.org/2000/01/rdf-schema#label> "occurs at place" .
+# 
+# https://w3id.org/moo/ont/performsagentrole
+<https://w3id.org/moo/ont/performsagentrole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moo/ont/performsagentrole> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moo/ont/eventAgent> .
+<https://w3id.org/moo/ont/performsagentrole> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moo/ont/Agentrole> .
+<https://w3id.org/moo/ont/performsagentrole> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/performsagentrole> <http://www.w3.org/2000/01/rdf-schema#label> "performsAgentRole" .
+# 
+# https://w3id.org/moo/ont/providesrole
+<https://w3id.org/moo/ont/providesrole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moo/ont/providesrole> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moo/ont/eventEvent> .
+<https://w3id.org/moo/ont/providesrole> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moo/ont/Participantrole> .
+<https://w3id.org/moo/ont/providesrole> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/providesrole> <http://www.w3.org/2000/01/rdf-schema#label> "providesRole" .
+# 
+# https://w3id.org/moo/ont/siteIdentifierType
+<https://w3id.org/moo/ont/siteIdentifierType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moo/ont/siteIdentifierType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moo/ont/SiteIdentifier> .
+<https://w3id.org/moo/ont/siteIdentifierType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moo/ont/SiteIdentifierType> .
+<https://w3id.org/moo/ont/siteIdentifierType> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/siteIdentifierType> <http://www.w3.org/2000/01/rdf-schema#label> "siteIdentifierType" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/moo/ont/identifierAsText
+<https://w3id.org/moo/ont/identifierAsText> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/moo/ont/identifierAsText> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moo/ont/SiteIdentifier> .
+<https://w3id.org/moo/ont/identifierAsText> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/moo/ont/identifierAsText> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/identifierAsText> <http://www.w3.org/2000/01/rdf-schema#label> "identifierAsText" .
+# 
+# 
+# 
+# #################################################################
+# #
 # #    Classes
 # #
 # #################################################################
 # 
 # 
+# http://www.opengis.net/ont/geosparql#SpatialObject
+<http://www.opengis.net/ont/geosparql#SpatialObject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.opengis.net/ont/geosparql#SpatialObject> <http://www.w3.org/2000/01/rdf-schema#comment> "Anything spatial (having or being a shape, position or an extent)." .
+<http://www.opengis.net/ont/geosparql#SpatialObject> <http://www.w3.org/2000/01/rdf-schema#label> "geosparql:SpatialObject" .
+# 
+# http://www.w3.org/2006/time#TemporalEntity
+<http://www.w3.org/2006/time#TemporalEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2006/time#TemporalEntity> <http://www.w3.org/2000/01/rdf-schema#label> "time:TemporalEntity" .
+# 
+# http://www.w3.org/ns/prov#Agent
+<http://www.w3.org/ns/prov#Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/prov#Agent> <http://www.w3.org/2000/01/rdf-schema#comment> "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity." .
+<http://www.w3.org/ns/prov#Agent> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<http://www.w3.org/ns/prov#Agent> <http://www.w3.org/2000/01/rdf-schema#label> "prov:Agent" .
+# 
+# http://www.w3.org/ns/prov#InstantaneousEvent
+<http://www.w3.org/ns/prov#InstantaneousEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/prov#InstantaneousEvent> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/prov> .
+<http://www.w3.org/ns/prov#InstantaneousEvent> <http://www.w3.org/2000/01/rdf-schema#label> "prov:InstantaneousEvent" .
+# 
 # https://schema.org/sdo/Organization
-<https://schema.org/sdo/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # https://schema.org/sdo/Person
-<https://schema.org/sdo/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/moo/ont/Agent
+<https://w3id.org/moo/ont/Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/Agent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Agent> .
+<https://w3id.org/moo/ont/Agent> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/Agent> <http://www.w3.org/2000/01/rdf-schema#label> "Agent" .
+# 
+# https://w3id.org/moo/ont/Agentrole
+<https://w3id.org/moo/ont/Agentrole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/Agentrole> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moo/ont/moo/Participantrole> .
+<https://w3id.org/moo/ont/moo/Participantrole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/Agentrole> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/Agentrole> <http://www.w3.org/2000/01/rdf-schema#label> "AgentRole" .
+# 
+# https://w3id.org/moo/ont/ComponentIdentifier
+<https://w3id.org/moo/ont/ComponentIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/ComponentIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
+_:genid3 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/moo/ont/ComponentIdentifierType> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/moo/ont/hasidentifiertype> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/moo/ont/ComponentIdentifier> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/ComponentIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "Component Identifier" .
+# 
+# https://w3id.org/moo/ont/ComponentIdentifierType
+<https://w3id.org/moo/ont/ComponentIdentifierType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/ComponentIdentifierType> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/ComponentIdentifierType> <http://www.w3.org/2000/01/rdf-schema#label> "Component Identifier Type" .
+# 
+# https://w3id.org/moo/ont/Design
+<https://w3id.org/moo/ont/Design> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/Design> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/Design> <http://www.w3.org/2000/01/rdf-schema#label> "Design" .
+# 
+# https://w3id.org/moo/ont/DesignedArtifact
+<https://w3id.org/moo/ont/DesignedArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/DesignedArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moo/ont/PhysicalArtifact> .
+<https://w3id.org/moo/ont/DesignedArtifact> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/DesignedArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Designed Artifact" .
+# 
+# https://w3id.org/moo/ont/DesignedComponent
+<https://w3id.org/moo/ont/DesignedComponent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/DesignedComponent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moo/ont/DesignedArtifact> .
+<https://w3id.org/moo/ont/DesignedComponent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/moo/ont/ComponentIdentifier> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/moo/ont/hasidentifier> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/moo/ont/DesignedComponent> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/DesignedComponent> <http://www.w3.org/2000/01/rdf-schema#label> "Designed Component" .
+# 
+# https://w3id.org/moo/ont/DesignedPhysicalSystem_5b5f51a9-2be8-4051-9988-0203059bbf2b
+<https://w3id.org/moo/ont/DesignedPhysicalSystem_5b5f51a9-2be8-4051-9988-0203059bbf2b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/DesignedPhysicalSystem_5b5f51a9-2be8-4051-9988-0203059bbf2b> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moo/ont/PhysicalArtifact> .
+<https://w3id.org/moo/ont/DesignedPhysicalSystem_5b5f51a9-2be8-4051-9988-0203059bbf2b> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid5 .
+_:genid5 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/moo/ont/SystemIdentifier> .
+_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/moo/ont/hasidentifier> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/moo/ont/DesignedPhysicalSystem_5b5f51a9-2be8-4051-9988-0203059bbf2b> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/DesignedPhysicalSystem_5b5f51a9-2be8-4051-9988-0203059bbf2b> <http://www.w3.org/2000/01/rdf-schema#label> "Designed Physical System" .
+# 
+# https://w3id.org/moo/ont/Entity
+<https://w3id.org/moo/ont/Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/Entity> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/Entity> <http://www.w3.org/2000/01/rdf-schema#label> "Entity" .
+# 
+# https://w3id.org/moo/ont/Event
+<https://w3id.org/moo/ont/Event> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#InstantaneousEvent> .
+<https://w3id.org/moo/ont/Event> <http://www.w3.org/2000/01/rdf-schema#comment> "An instantaneous event, or event for short, happens in the world and marks a change in the world, in its activities and in its entities. The term 'event' is commonly used in process algebra with a similar meaning. Events represent communications or interactions; they are assumed to be atomic and instantaneous." .
+<https://w3id.org/moo/ont/Event> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/Event> <http://www.w3.org/2000/01/rdf-schema#label> "Event" .
+# 
+# https://w3id.org/moo/ont/Facility
+<https://w3id.org/moo/ont/Facility> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/Facility> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moo/ont/Site> .
+<https://w3id.org/moo/ont/Facility> <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0003-4091-6059> .
+<https://w3id.org/moo/ont/Facility> <http://purl.org/dc/elements/1.1/date> "2022-04-12T13:35:16+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://w3id.org/moo/ont/Facility> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://www.wikidata.org/wiki/Q13226383> .
+<https://w3id.org/moo/ont/Facility> <http://www.w3.org/2004/02/skos/core#definition> "Place for doing something"@en .
+# 
+# https://w3id.org/moo/ont/IdentiferType
+<https://w3id.org/moo/ont/IdentiferType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/moo/ont/Identifier
+<https://w3id.org/moo/ont/Identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/moo/ont/InformationObject
+<https://w3id.org/moo/ont/InformationObject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/InformationObject> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/InformationObject> <http://www.w3.org/2000/01/rdf-schema#label> "Information Object" .
+# 
+# https://w3id.org/moo/ont/MilitaryFacility
+<https://w3id.org/moo/ont/MilitaryFacility> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/MilitaryFacility> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moo/ont/Facility> .
+<https://w3id.org/moo/ont/MilitaryFacility> <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0003-4091-6059> .
+<https://w3id.org/moo/ont/MilitaryFacility> <http://purl.org/dc/elements/1.1/date> "2022-04-12T13:35:35+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://w3id.org/moo/ont/MilitaryFacility> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://www.wikidata.org/wiki/Q18691599> .
+# 
+# https://w3id.org/moo/ont/Participantrole
+<https://w3id.org/moo/ont/Participantrole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/Participantrole> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/Participantrole> <http://www.w3.org/2000/01/rdf-schema#label> "ParticipantRole" .
+# 
+# https://w3id.org/moo/ont/PhysicalArtifact
+<https://w3id.org/moo/ont/PhysicalArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/PhysicalArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moo/ont/Entity> .
+<https://w3id.org/moo/ont/PhysicalArtifact> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/PhysicalArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Physical Artifact" .
+# 
+# https://w3id.org/moo/ont/Place
+<https://w3id.org/moo/ont/Place> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/Place> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#SpatialObject> .
+<https://w3id.org/moo/ont/Place> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/Place> <http://www.w3.org/2000/01/rdf-schema#label> "Place" .
+# 
+# https://w3id.org/moo/ont/Plan
+<https://w3id.org/moo/ont/Plan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/Plan> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/Plan> <http://www.w3.org/2000/01/rdf-schema#label> "Plan" .
+# 
+# https://w3id.org/moo/ont/Site
+<https://w3id.org/moo/ont/Site> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/Site> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
+<https://w3id.org/moo/ont/Site> <http://www.w3.org/2000/01/rdf-schema#comment> "The Site Pattern is intended to describe a places of interest (POIs) that is associated with a certain geospatial feature. We model a  site as something that is described by some information object and allows us to attach non-geospatial information (e.g., name, web page, etc.) and my potentially have some spatial footprint, which is a geometric feature in space, e.g. a point, a lin e, etc." .
+<https://w3id.org/moo/ont/Site> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/Site> <http://www.w3.org/2000/01/rdf-schema#label> "Site" .
+# 
+# https://w3id.org/moo/ont/SiteIdentifier
+<https://w3id.org/moo/ont/SiteIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/SiteIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moo/ont/Identifier> .
+<https://w3id.org/moo/ont/SiteIdentifier> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/SiteIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "Site Identifier" .
+# 
+# https://w3id.org/moo/ont/SiteIdentifierType
+<https://w3id.org/moo/ont/SiteIdentifierType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/SiteIdentifierType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moo/ont/IdentiferType> .
+<https://w3id.org/moo/ont/SiteIdentifierType> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/SiteIdentifierType> <http://www.w3.org/2000/01/rdf-schema#label> "Identifier Type" .
+# 
+# https://w3id.org/moo/ont/SystemIdentifier
+<https://w3id.org/moo/ont/SystemIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/SystemIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid6 .
+_:genid6 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/moo/ont/SystemIdentifierType> .
+_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/moo/ont/hasidentifiertype> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/moo/ont/SystemIdentifier> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/SystemIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "System Identifier" .
+# 
+# https://w3id.org/moo/ont/SystemIdentifierType
+<https://w3id.org/moo/ont/SystemIdentifierType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/SystemIdentifierType> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/SystemIdentifierType> <http://www.w3.org/2000/01/rdf-schema#label> "System Identifier Type" .
+# 
+# https://w3id.org/moo/ont/Timeentity
+<https://w3id.org/moo/ont/Timeentity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moo/ont/Timeentity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2006/time#TemporalEntity> .
+<https://w3id.org/moo/ont/Timeentity> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/moo/ont/> .
+<https://w3id.org/moo/ont/Timeentity> <http://www.w3.org/2000/01/rdf-schema#label> "TimeEntity" .
+# 
+# https://w3id.org/moo/ont/eventAgent
+# 
+# https://w3id.org/moo/ont/eventEvent
+# 
+# https://w3id.org/moo/ont/eventInformationObject
+# 
+# https://w3id.org/moo/ont/eventPlace
+# 
+# https://w3id.org/moo/ont/eventTimeentity
+# 
+# https://w3id.org/moo/ont/moo/Participantrole
 # 
 # 
 # 
@@ -67,28 +416,6 @@
 # #################################################################
 # 
 # 
-# http://wikidata.org/entity/Q108576266
-<http://wikidata.org/entity/Q108576266> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://wikidata.org/entity/Q108576266> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/sdo/Organization> .
-<http://wikidata.org/entity/Q108576266> <https://schema.org/sdo/name> "Center for Research Computing"@en .
-<http://wikidata.org/entity/Q108576266> <https://schema.org/sdo/url> "https://crc.nd.edu"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
-# 
 # http://wikidata.org/entity/Q178848
-<http://wikidata.org/entity/Q178848> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://wikidata.org/entity/Q178848> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/sdo/Organization> .
-<http://wikidata.org/entity/Q178848> <https://schema.org/sdo/name> "University of Notre Dame"@en .
-<http://wikidata.org/entity/Q178848> <https://schema.org/sdo/url> "https://crc.nd.edu"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
-# 
-# https://orcid.org/0000-0001-8214-7177
-<https://orcid.org/0000-0001-8214-7177> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://orcid.org/0000-0001-8214-7177> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/sdo/Person> .
-<https://orcid.org/0000-0001-8214-7177> <https://schema.org/sdo/email> "csweet1@nd.edu"@en .
-<https://orcid.org/0000-0001-8214-7177> <https://schema.org/sdo/name> "Christopher Sweet"@en .
-# 
-# https://orcid.org/0000-0003-4091-6059
-<https://orcid.org/0000-0003-4091-6059> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://orcid.org/0000-0003-4091-6059> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/sdo/Person> .
-<https://orcid.org/0000-0003-4091-6059> <https://schema.org/sdo/email> "cvardema@nd.edu"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
-<https://orcid.org/0000-0003-4091-6059> <https://schema.org/sdo/name> "Charles F Vardeman II" .
 # 
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

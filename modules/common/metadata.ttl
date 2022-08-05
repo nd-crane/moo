@@ -21,11 +21,22 @@
 @base <https://w3id.org/moo/ont/moo/> .
 
 <https://w3id.org/moo/ont/moo> rdf:type owl:Ontology ;
-        dcterms:creator <https://orcid.org/0000-0003-4091-6059> ;
-        dcterms:contributor <https://orcid.org/0000-0001-8214-7177> ;
         dcterms:created "2022-02-15"^^xsd:date ;
         dcterms:modified "2022-02-21"^^xsd:date ;
-        owl:versionInfo "0.0.1"@en ;
+        dcterms:publisher [
+                                   a sdo:Organization ;
+		                           sdo:name "Center for Research Computing, University of Notre Dame" ;
+		                           sdo:url "https://crc.nd.edu"^^xsd:anyURI ;
+                                   owl:sameAs wd:Q178848 ;
+                               ];
+                               dcterms:creator [
+                                   a sdo:Person ;
+                                   sdo:name "Charles F. Vardeman II" ;
+                                   sdo:affiliation "University of Notre Dame" ;
+                                   sdo:email "cvardema@nd.edu"^^xsd:anyURI ;
+                                   sdo:url "https://orcid.org/0000-0003-4091-6059"^^xsd:anyURI ;
+                               ];
+        owl:versionInfo "0.1.0"@en ;
         owl:versionIRI <https://w3id.org/moo/ont/0.1> ;
         vann:preferredNamespacePrefix "moo"@en ;
         vann:preferredNamespaceUri "http://w3id.org/moo/ont/moo/" ;
@@ -40,29 +51,6 @@
                 * Creation of Units Module and alignment to QUDT"""@en ;
         owl:imports <http://www.w3.org/2006/time> ;
         owl:imports <https://raw.githubusercontent.com/opengeospatial/ogc-geosparql/master/1.1/geo.ttl>;
+        owl:imports <https://www.w3.org/ns/prov-o> ;
 .
 
-
-<https://orcid.org/0000-0003-4091-6059>
-    a sdo:Person ;
-    sdo:email "cvardema@nd.edu"^^xsd:anyURI ;
-    sdo:name "Charles F Vardeman II" ;
-.
-
-<https://orcid.org/0000-0001-8214-7177>
-    a sdo:Person ;
-    sdo:email "csweet1@nd.edu"@en ;
-    sdo:name "Christopher Sweet"@en ;
-.
-
-wd:Q178848
-    a sdo:Organization;
-    sdo:name "University of Notre Dame"@en ;
-    sdo:url "https://crc.nd.edu"^^xsd:anyURI;
-.
-
-wd:Q108576266
-    a sdo:Organization ;
-    sdo:name "Center for Research Computing"@en ;
-    sdo:url "https://crc.nd.edu"^^xsd:anyURI ;
-.
