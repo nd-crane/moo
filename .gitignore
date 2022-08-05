@@ -134,5 +134,7 @@ dmypy.json
 /tests/trash directory.
 /tests/trash directory.site
 
-
+.DS_Store
+.project
+catalog-v001.xml
 .pdm.toml
