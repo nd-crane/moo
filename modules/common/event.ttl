@@ -23,6 +23,38 @@
 #    Object Properties
 #################################################################
 
+
+moo:hasEndEvent
+  a owl:ObjectProperty ;
+  rdfs:label "hasEndEvent" ;
+  rdfs:subPropertyOf moo:hasEvent ;
+.
+moo:hasEvent
+  a owl:ObjectProperty ;
+  rdfs:label "hasEvent" ;
+  rdfs:range moo:Event ;
+.
+moo:hasStartEvent
+  a owl:ObjectProperty ;
+  rdfs:label "hasStartEvent" ;
+  rdfs:range moo:Event ;
+  rdfs:subPropertyOf moo:hasEvent ;
+.
+moo:hasSubactivity
+  a owl:ObjectProperty ;
+  rdfs:domain moo:Activity ;
+  rdfs:label "hasSubactivity" ;
+  rdfs:range moo:Activity ;
+  rdfs:subPropertyOf moo:hasPart ;
+.
+moo:subActivityOf
+  a owl:ObjectProperty ;
+  rdfs:domain moo:Activity ;
+  rdfs:label "subActivityOf" ;
+  rdfs:range moo:Activity ;
+  rdfs:subPropertyOf moo:partOf ;
+.
+
 ###  https://w3id.org/moo/ont/eventisDescribedBy
 moo:eventisDescribedBy rdf:type owl:ObjectProperty ;
                                                         rdfs:domain moo:eventPlace ;
@@ -75,28 +107,28 @@ moo:performsagentrole rdf:type owl:ObjectProperty ;
 #    Classes
 #################################################################
 
-###  http://www.opengis.net/ont/geosparql#SpatialObject
-geosparql:SpatialObject rdf:type owl:Class ;
-                        rdfs:comment "Anything spatial (having or being a shape, position or an extent)." ;
-                        rdfs:label "geosparql:SpatialObject" .
-
-
-###  http://www.w3.org/2006/time#TemporalEntity
-time:TemporalEntity rdf:type owl:Class ;
-                    rdfs:label "time:TemporalEntity" .
-
-
-###  http://www.w3.org/ns/prov#Agent
-prov:Agent rdf:type owl:Class ;
-           rdfs:comment "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity." ;
-           rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
-           rdfs:label "prov:Agent" .
-
-
-###  http://www.w3.org/ns/prov#InstantaneousEvent
-prov:InstantaneousEvent rdf:type owl:Class ;
-                        rdfs:isDefinedBy <http://www.w3.org/ns/prov> ;
-                        rdfs:label "prov:InstantaneousEvent"
+moo:Activity
+  a owl:Class ;
+  rdfs:label "Activity"@en;
+  skos:definition "An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities."@en ;
+  prov:wasQuotedFrom "https://www.w3.org/TR/prov-o/#Activity";
+  rdfs:subClassOf time:TemporalEntity ;
+    rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty moo:hasEndEvent ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty moo:hasStartEvent ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty moo:hasEvent ;
+    ] ;
+  owl:equivalentClass prov:Activity ;
 .
 
 
@@ -117,7 +149,8 @@ moo:Agent rdf:type owl:Class ;
 
 ###  https://w3id.org/moo/ont/eventEvent
 moo:Event rdf:type owl:Class ;
-    rdfs:subClassOf prov:InstantaneousEvent ;
+    owl:equivalentClass prov:InstantaneousEvent ;
+    rdfs:subClassOf time:TemporalEntity ;
     rdfs:comment "An instantaneous event, or event for short, happens in the world and marks a change in the world, in its activities and in its entities. The term 'event' is commonly used in process algebra with a similar meaning. Events represent communications or interactions; they are assumed to be atomic and instantaneous." ;
     rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
     rdfs:label "Event"
@@ -137,14 +170,6 @@ moo:Place rdf:type owl:Class ;
         rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
         rdfs:label "Place"
 .
-
-
-###  https://w3id.org/moo/ont/eventTimeentity
-moo:Timeentity rdf:type owl:Class ;
-                                                     rdfs:subClassOf time:TemporalEntity ;
-                                                     rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
-                                                     rdfs:label "TimeEntity" .
-
 
 ###  https://w3id.org/moo/ont/Agentrole
 moo:Agentrole rdf:type owl:Class ;
