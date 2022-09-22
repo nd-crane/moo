@@ -4,6 +4,9 @@ This section provides details for each class and property defined by Event Core 
    <h3 id="classes-headline" class="list">Classes</h3>
    <ul class="hlist">
       <li>
+         <a href="#https://w3id.org/moo/ont/Activity" title="https://w3id.org/moo/ont/Activity">Activity</a>
+      </li>
+      <li>
          <a href="#https://w3id.org/moo/ont/Agent" title="https://w3id.org/moo/ont/Agent">Agent</a>
       </li>
       <li>
@@ -40,10 +43,6 @@ This section provides details for each class and property defined by Event Core 
          </a>
       </li>
       <li>
-         <a href="#http://www.opengis.net/ont/geosparql#SpatialObject"
-            title="http://www.opengis.net/ont/geosparql#SpatialObject">geosparql:SpatialObject</a>
-      </li>
-      <li>
          <a href="#https://w3id.org/moo/ont/SiteIdentifierType" title="https://w3id.org/moo/ont/SiteIdentifierType">Identifier Type</a>
       </li>
       <li>
@@ -67,12 +66,6 @@ This section provides details for each class and property defined by Event Core 
          <a href="#https://w3id.org/moo/ont/Plan" title="https://w3id.org/moo/ont/Plan">Plan</a>
       </li>
       <li>
-         <a href="#http://www.w3.org/ns/prov#Agent" title="http://www.w3.org/ns/prov#Agent">prov:Agent</a>
-      </li>
-      <li>
-         <a href="#http://www.w3.org/ns/prov#InstantaneousEvent" title="http://www.w3.org/ns/prov#InstantaneousEvent">prov:InstantaneousEvent</a>
-      </li>
-      <li>
          <a href="#https://w3id.org/moo/ont/Site" title="https://w3id.org/moo/ont/Site">Site</a>
       </li>
       <li>
@@ -84,13 +77,38 @@ This section provides details for each class and property defined by Event Core 
       <li>
          <a href="#https://w3id.org/moo/ont/SystemIdentifierType" title="https://w3id.org/moo/ont/SystemIdentifierType">System Identifier Type</a>
       </li>
-      <li>
-         <a href="#http://www.w3.org/2006/time#TemporalEntity" title="http://www.w3.org/2006/time#TemporalEntity">time:TemporalEntity</a>
-      </li>
-      <li>
-         <a href="#https://w3id.org/moo/ont/Timeentity" title="https://w3id.org/moo/ont/Timeentity">TimeEntity</a>
-      </li>
    </ul>
+   <div class="entity" id="https://w3id.org/moo/ont/Activity">
+      <h3>Activity<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moo/ont/Activity</p>
+      <div class="comment">
+         <span class="markdown">An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/2006/time#TemporalEntity"
+               target="_blank"
+               title="http://www.w3.org/2006/time#TemporalEntity">temporal entity</a>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://w3id.org/moo/ont/hasSubactivity" title="https://w3id.org/moo/ont/hasSubactivity">hasSubactivity</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://w3id.org/moo/ont/subActivityOf" title="https://w3id.org/moo/ont/subActivityOf">subActivityOf</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://w3id.org/moo/ont/hasSubactivity" title="https://w3id.org/moo/ont/hasSubactivity">hasSubactivity</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://w3id.org/moo/ont/subActivityOf" title="https://w3id.org/moo/ont/subActivityOf">subActivityOf</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="https://w3id.org/moo/ont/Agent">
       <h3>Agent<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -107,8 +125,9 @@ This section provides details for each class and property defined by Event Core 
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#http://www.w3.org/ns/prov#Agent" title="http://www.w3.org/ns/prov#Agent">prov:Agent</a>
-            <sup class="type-c" title="class">c</sup>
+            <a href="http://www.w3.org/ns/prov#Agent"
+               target="_blank"
+               title="http://www.w3.org/ns/prov#Agent">agent</a>
          </dd>
       </dl>
    </div>
@@ -333,8 +352,15 @@ This section provides details for each class and property defined by Event Core 
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#http://www.w3.org/ns/prov#InstantaneousEvent" title="http://www.w3.org/ns/prov#InstantaneousEvent">prov:InstantaneousEvent</a>
-            <sup class="type-c" title="class">c</sup>
+            <a href="http://www.w3.org/2006/time#TemporalEntity"
+               target="_blank"
+               title="http://www.w3.org/2006/time#TemporalEntity">temporal entity</a>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://w3id.org/moo/ont/hasEvent" title="https://w3id.org/moo/ont/hasEvent">hasEvent</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://w3id.org/moo/ont/hasStartEvent" title="https://w3id.org/moo/ont/hasStartEvent">hasStartEvent</a>
+            <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
@@ -369,24 +395,6 @@ This section provides details for each class and property defined by Event Core 
          <dt>has sub-classes</dt>
          <dd>
             <a href="#https://w3id.org/moo/ont/MilitaryFacility" title="https://w3id.org/moo/ont/MilitaryFacility">military facility</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="http://www.opengis.net/ont/geosparql#SpatialObject">
-      <h3>geosparql:SpatialObject<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.opengis.net/ont/geosparql#SpatialObject</p>
-      <div class="comment">
-         <span class="markdown">Anything spatial (having or being a shape, position or an extent).</span>
-      </div>
-      <dl class="description">
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#https://w3id.org/moo/ont/Place" title="https://w3id.org/moo/ont/Place">Place</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -530,9 +538,9 @@ This section provides details for each class and property defined by Event Core 
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#http://www.opengis.net/ont/geosparql#SpatialObject"
-               title="http://www.opengis.net/ont/geosparql#SpatialObject">geosparql:SpatialObject</a>
-            <sup class="type-c" title="class">c</sup>
+            <a href="http://www.opengis.net/ont/geosparql#SpatialObject"
+               target="_blank"
+               title="http://www.opengis.net/ont/geosparql#SpatialObject">spatial object</a>
          </dd>
       </dl>
    </div>
@@ -554,51 +562,6 @@ This section provides details for each class and property defined by Event Core 
          <dd>
             <a href="#https://w3id.org/moo/ont/isDescribedBy" title="https://w3id.org/moo/ont/isDescribedBy">is described by</a>
             <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="http://www.w3.org/ns/prov#Agent">
-      <h3>prov:Agent<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.w3.org/ns/prov#Agent</p>
-      <div class="comment">
-         <span class="markdown">An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity.</span>
-      </div>
-      <dl class="definedBy">
-         <dt>Is defined by</dt>
-         <dd>
-            <a href="https://w3id.org/moo/ont/">https://w3id.org/moo/ont/</a>
-         </dd>
-      </dl>
-      <dl class="description">
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#https://w3id.org/moo/ont/Agent" title="https://w3id.org/moo/ont/Agent">Agent</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="http://www.w3.org/ns/prov#InstantaneousEvent">
-      <h3>prov:InstantaneousEvent<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.w3.org/ns/prov#InstantaneousEvent</p>
-      <dl class="definedBy">
-         <dt>Is defined by</dt>
-         <dd>
-            <a href="http://www.w3.org/ns/prov">http://www.w3.org/ns/prov</a>
-         </dd>
-      </dl>
-      <dl class="description">
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#https://w3id.org/moo/ont/Event" title="https://w3id.org/moo/ont/Event">Event</a>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -703,42 +666,6 @@ This section provides details for each class and property defined by Event Core 
          </dd>
       </dl>
    </div>
-   <div class="entity" id="http://www.w3.org/2006/time#TemporalEntity">
-      <h3>time:TemporalEntity<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.w3.org/2006/time#TemporalEntity</p>
-      <dl class="description">
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#https://w3id.org/moo/ont/Timeentity" title="https://w3id.org/moo/ont/Timeentity">TimeEntity</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="https://w3id.org/moo/ont/Timeentity">
-      <h3>TimeEntity<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/moo/ont/Timeentity</p>
-      <dl class="definedBy">
-         <dt>Is defined by</dt>
-         <dd>
-            <a href="https://w3id.org/moo/ont/">https://w3id.org/moo/ont/</a>
-         </dd>
-      </dl>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#http://www.w3.org/2006/time#TemporalEntity" title="http://www.w3.org/2006/time#TemporalEntity">time:TemporalEntity</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
 </div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
    <h3 id="properties" class="list">Object Properties</h3>
    <ul class="hlist">
@@ -749,6 +676,12 @@ This section provides details for each class and property defined by Event Core 
          <a href="#https://w3id.org/moo/ont/hasSubsystem" title="https://w3id.org/moo/ont/hasSubsystem">has SubSystem</a>
       </li>
       <li>
+         <a href="#https://w3id.org/moo/ont/hasEndEvent" title="https://w3id.org/moo/ont/hasEndEvent">hasEndEvent</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/moo/ont/hasEvent" title="https://w3id.org/moo/ont/hasEvent">hasEvent</a>
+      </li>
+      <li>
          <a href="#https://w3id.org/moo/ont/hasIdentifier" title="https://w3id.org/moo/ont/hasIdentifier">hasIdentifier</a>
       </li>
       <li>
@@ -756,6 +689,12 @@ This section provides details for each class and property defined by Event Core 
       </li>
       <li>
          <a href="#https://w3id.org/moo/ont/hasSiteIdentifier" title="https://w3id.org/moo/ont/hasSiteIdentifier">hasSiteIdentifier</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/moo/ont/hasStartEvent" title="https://w3id.org/moo/ont/hasStartEvent">hasStartEvent</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/moo/ont/hasSubactivity" title="https://w3id.org/moo/ont/hasSubactivity">hasSubactivity</a>
       </li>
       <li>
          <a href="#https://w3id.org/moo/ont/isComponentOf" title="https://w3id.org/moo/ont/isComponentOf">is component of</a>
@@ -786,6 +725,9 @@ This section provides details for each class and property defined by Event Core 
       </li>
       <li>
          <a href="#https://w3id.org/moo/ont/siteIdentifierType" title="https://w3id.org/moo/ont/siteIdentifierType">siteIdentifierType</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/moo/ont/subActivityOf" title="https://w3id.org/moo/ont/subActivityOf">subActivityOf</a>
       </li>
    </ul>
    <div class="entity" id="https://w3id.org/moo/ont/hasComponent">
@@ -842,6 +784,46 @@ This section provides details for each class and property defined by Event Core 
             <dd>
                <a href="#https://w3id.org/moo/ont/DesignedPhysicalSystem_5b5f51a9-2be8-4051-9988-0203059bbf2b"
                   title="https://w3id.org/moo/ont/DesignedPhysicalSystem_5b5f51a9-2be8-4051-9988-0203059bbf2b">Designed Physical System</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/moo/ont/hasEndEvent">
+      <h3>hasEndEvent<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moo/ont/hasEndEvent</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#https://w3id.org/moo/ont/hasEvent" title="https://w3id.org/moo/ont/hasEvent">hasEvent</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/moo/ont/hasEvent">
+      <h3>hasEvent<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moo/ont/hasEvent</p>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#https://w3id.org/moo/ont/hasEndEvent" title="https://w3id.org/moo/ont/hasEndEvent">hasEndEvent</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#https://w3id.org/moo/ont/hasStartEvent" title="https://w3id.org/moo/ont/hasStartEvent">hasStartEvent</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/moo/ont/Event" title="https://w3id.org/moo/ont/Event">Event</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -912,6 +894,57 @@ This section provides details for each class and property defined by Event Core 
             <dt>has range</dt>
             <dd>
                <a href="#https://w3id.org/moo/ont/SiteIdentifier" title="https://w3id.org/moo/ont/SiteIdentifier">Site Identifier</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/moo/ont/hasStartEvent">
+      <h3>hasStartEvent<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moo/ont/hasStartEvent</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#https://w3id.org/moo/ont/hasEvent" title="https://w3id.org/moo/ont/hasEvent">hasEvent</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/moo/ont/Event" title="https://w3id.org/moo/ont/Event">Event</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/moo/ont/hasSubactivity">
+      <h3>hasSubactivity<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moo/ont/hasSubactivity</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moo/ont/hasPart"
+                  target="_blank"
+                  title="https://w3id.org/moo/ont/hasPart">has part</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/moo/ont/Activity" title="https://w3id.org/moo/ont/Activity">Activity</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/moo/ont/Activity" title="https://w3id.org/moo/ont/Activity">Activity</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -1211,6 +1244,35 @@ This section provides details for each class and property defined by Event Core 
             <dt>has range</dt>
             <dd>
                <a href="#https://w3id.org/moo/ont/SiteIdentifierType" title="https://w3id.org/moo/ont/SiteIdentifierType">Identifier Type</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/moo/ont/subActivityOf">
+      <h3>subActivityOf<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moo/ont/subActivityOf</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moo/ont/partOf"
+                  target="_blank"
+                  title="https://w3id.org/moo/ont/partOf">part of</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/moo/ont/Activity" title="https://w3id.org/moo/ont/Activity">Activity</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/moo/ont/Activity" title="https://w3id.org/moo/ont/Activity">Activity</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>

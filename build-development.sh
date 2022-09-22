@@ -2,7 +2,8 @@
 
 # WARNING: This is a quick hack that depends on the verison of python PDM installed
 pdmdir=`pdm info |grep Packages | cut -d: -f2`
-mergecmd="pdm run python ${pdmdir}/lib/rdfx/rdfx_cli.py"
+# mergecmd="pdm run python ${pdmdir}/lib/rdfx/rdfx_cli.py"
+mergecmd="rdfx"
 pylodecmd="pdm run pylode"
 files=$(cat tests/modules.txt | awk -F, '{print $2}')
 shapefiles=$(cat tests/shapes.txt | awk -F, '{print $2}')

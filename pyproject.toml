@@ -6,6 +6,7 @@ authors = [
     {name = "Charles Vardeman", email = "charles.vardeman@gmail.com"},
 ]
 dependencies = [
+    "pylode>=3.0.1",
     "rdfx @ git+https://github.com/charlesvardeman/rdfx.git",
 ]
 requires-python = ">=3.10"

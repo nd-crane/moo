@@ -32,6 +32,36 @@
 }, {
   "@id" : "_:genid3",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#minCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/moo/ont/hasEvent"
+  } ]
+}, {
+  "@id" : "_:genid4",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/moo/ont/hasEndEvent"
+  } ]
+}, {
+  "@id" : "_:genid5",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/moo/ont/hasStartEvent"
+  } ]
+}, {
+  "@id" : "_:genid6",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/moo/ont/hasidentifiertype"
   } ],
@@ -39,7 +69,7 @@
     "@id" : "https://w3id.org/moo/ont/ComponentIdentifierType"
   } ]
 }, {
-  "@id" : "_:genid4",
+  "@id" : "_:genid7",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/moo/ont/hasidentifier"
@@ -48,7 +78,7 @@
     "@id" : "https://w3id.org/moo/ont/ComponentIdentifier"
   } ]
 }, {
-  "@id" : "_:genid5",
+  "@id" : "_:genid8",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/moo/ont/hasidentifier"
@@ -57,7 +87,7 @@
     "@id" : "https://w3id.org/moo/ont/SystemIdentifier"
   } ]
 }, {
-  "@id" : "_:genid6",
+  "@id" : "_:genid9",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/moo/ont/hasidentifiertype"
@@ -99,41 +129,18 @@
     "@id" : "_:genid2"
   } ]
 }, {
-  "@id" : "http://www.opengis.net/ont/geosparql#SpatialObject",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Anything spatial (having or being a shape, position or an extent)."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "geosparql:SpatialObject"
-  } ]
-}, {
-  "@id" : "http://www.w3.org/2006/time#TemporalEntity",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "time:TemporalEntity"
-  } ]
-}, {
-  "@id" : "http://www.w3.org/ns/prov#Agent",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/moo/ont/"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "prov:Agent"
+  "@id" : "http://www.w3.org/ns/prov#Activity",
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://w3id.org/moo/ont/Activity"
   } ]
 }, {
   "@id" : "http://www.w3.org/ns/prov#InstantaneousEvent",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://www.w3.org/ns/prov"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "prov:InstantaneousEvent"
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://w3id.org/moo/ont/Event"
   } ]
+}, {
+  "@id" : "http://www.w3.org/ns/prov#wasQuotedFrom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "https://schema.org/sdo/Organization",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
@@ -155,6 +162,29 @@
 }, {
   "@id" : "https://schema.org/sdo/url",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://w3id.org/moo/ont/Activity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Activity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2006/time#TemporalEntity"
+  }, {
+    "@id" : "_:genid3"
+  }, {
+    "@id" : "_:genid4"
+  }, {
+    "@id" : "_:genid5"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities."
+  } ],
+  "http://www.w3.org/ns/prov#wasQuotedFrom" : [ {
+    "@value" : "https://www.w3.org/TR/prov-o/#Activity"
+  } ]
 }, {
   "@id" : "https://w3id.org/moo/ont/Agent",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
@@ -189,7 +219,7 @@
     "@value" : "Component Identifier"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid3"
+    "@id" : "_:genid6"
   } ]
 }, {
   "@id" : "https://w3id.org/moo/ont/ComponentIdentifierType",
@@ -233,7 +263,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/moo/ont/DesignedArtifact"
   }, {
-    "@id" : "_:genid4"
+    "@id" : "_:genid7"
   } ]
 }, {
   "@id" : "https://w3id.org/moo/ont/DesignedPhysicalSystem_5b5f51a9-2be8-4051-9988-0203059bbf2b",
@@ -247,7 +277,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/moo/ont/PhysicalArtifact"
   }, {
-    "@id" : "_:genid5"
+    "@id" : "_:genid8"
   } ]
 }, {
   "@id" : "https://w3id.org/moo/ont/Entity",
@@ -271,7 +301,7 @@
     "@value" : "Event"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/ns/prov#InstantaneousEvent"
+    "@id" : "http://www.w3.org/2006/time#TemporalEntity"
   } ]
 }, {
   "@id" : "https://w3id.org/moo/ont/Facility",
@@ -415,7 +445,7 @@
     "@value" : "System Identifier"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid6"
+    "@id" : "_:genid9"
   } ]
 }, {
   "@id" : "https://w3id.org/moo/ont/SystemIdentifierType",
@@ -425,18 +455,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "System Identifier Type"
-  } ]
-}, {
-  "@id" : "https://w3id.org/moo/ont/Timeentity",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/moo/ont/"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "TimeEntity"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/2006/time#TemporalEntity"
   } ]
 }, {
   "@id" : "https://w3id.org/moo/ont/eventAgent",
@@ -499,6 +517,24 @@
     "@id" : "https://w3id.org/moo/ont/DesignedComponent"
   } ]
 }, {
+  "@id" : "https://w3id.org/moo/ont/hasEndEvent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "hasEndEvent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/moo/ont/hasEvent"
+  } ]
+}, {
+  "@id" : "https://w3id.org/moo/ont/hasEvent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "hasEvent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/moo/ont/Event"
+  } ]
+}, {
   "@id" : "https://w3id.org/moo/ont/hasIdentifier",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
@@ -507,6 +543,9 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "hasIdentifier"
   } ]
+}, {
+  "@id" : "https://w3id.org/moo/ont/hasPart",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
 }, {
   "@id" : "https://w3id.org/moo/ont/hasSiteIdentifier",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
@@ -524,6 +563,33 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/moo/ont/hasIdentifier"
+  } ]
+}, {
+  "@id" : "https://w3id.org/moo/ont/hasStartEvent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "hasStartEvent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/moo/ont/Event"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/moo/ont/hasEvent"
+  } ]
+}, {
+  "@id" : "https://w3id.org/moo/ont/hasSubactivity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/moo/ont/Activity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "hasSubactivity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/moo/ont/Activity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/moo/ont/hasPart"
   } ]
 }, {
   "@id" : "https://w3id.org/moo/ont/hasSubsystem",
@@ -706,6 +772,9 @@
     "@id" : "https://w3id.org/moo/ont/eventPlace"
   } ]
 }, {
+  "@id" : "https://w3id.org/moo/ont/partOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
   "@id" : "https://w3id.org/moo/ont/performsagentrole",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -749,5 +818,20 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/moo/ont/SiteIdentifierType"
+  } ]
+}, {
+  "@id" : "https://w3id.org/moo/ont/subActivityOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/moo/ont/Activity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "subActivityOf"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/moo/ont/Activity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/moo/ont/partOf"
   } ]
 } ]

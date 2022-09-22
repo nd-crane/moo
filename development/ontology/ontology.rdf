@@ -95,6 +95,13 @@
     
 
 
+    <!-- http://www.w3.org/ns/prov#wasQuotedFrom -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/prov#wasQuotedFrom"/>
+    
+
+
     <!-- https://schema.org/sdo/affiliation -->
 
 
@@ -190,6 +197,26 @@
     
 
 
+    <!-- https://w3id.org/moo/ont/hasEndEvent -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/moo/ont/hasEndEvent">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/moo/ont/hasEvent"/>
+        <rdfs:label>hasEndEvent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/moo/ont/hasEvent -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/moo/ont/hasEvent">
+        <rdfs:range rdf:resource="https://w3id.org/moo/ont/Event"/>
+        <rdfs:label>hasEvent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/moo/ont/hasIdentifier -->
 
 
@@ -197,6 +224,13 @@
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
         <rdfs:label>hasIdentifier</rdfs:label>
     </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/moo/ont/hasPart -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/moo/ont/hasPart"/>
     
 
 
@@ -209,6 +243,29 @@
         <rdfs:range rdf:resource="https://w3id.org/moo/ont/SiteIdentifier"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
         <rdfs:label>hasSiteIdentifier</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/moo/ont/hasStartEvent -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/moo/ont/hasStartEvent">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/moo/ont/hasEvent"/>
+        <rdfs:range rdf:resource="https://w3id.org/moo/ont/Event"/>
+        <rdfs:label>hasStartEvent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/moo/ont/hasSubactivity -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/moo/ont/hasSubactivity">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/moo/ont/hasPart"/>
+        <rdfs:domain rdf:resource="https://w3id.org/moo/ont/Activity"/>
+        <rdfs:range rdf:resource="https://w3id.org/moo/ont/Activity"/>
+        <rdfs:label>hasSubactivity</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -290,6 +347,13 @@
     
 
 
+    <!-- https://w3id.org/moo/ont/partOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/moo/ont/partOf"/>
+    
+
+
     <!-- https://w3id.org/moo/ont/performsagentrole -->
 
 
@@ -322,6 +386,18 @@
         <rdfs:range rdf:resource="https://w3id.org/moo/ont/SiteIdentifierType"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
         <rdfs:label>siteIdentifierType</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/moo/ont/subActivityOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/moo/ont/subActivityOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/moo/ont/partOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/moo/ont/Activity"/>
+        <rdfs:range rdf:resource="https://w3id.org/moo/ont/Activity"/>
+        <rdfs:label>subActivityOf</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -362,43 +438,21 @@
     
 
 
-    <!-- http://www.opengis.net/ont/geosparql#SpatialObject -->
+    <!-- http://www.w3.org/ns/prov#Activity -->
 
 
-    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#SpatialObject">
-        <rdfs:comment>Anything spatial (having or being a shape, position or an extent).</rdfs:comment>
-        <rdfs:label>geosparql:SpatialObject</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.w3.org/2006/time#TemporalEntity -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/2006/time#TemporalEntity">
-        <rdfs:label>time:TemporalEntity</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.w3.org/ns/prov#Agent -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/ns/prov#Agent">
-        <rdfs:comment>An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent&apos;s activity.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
-        <rdfs:label>prov:Agent</rdfs:label>
-    </owl:Class>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Activity">
+        <owl:equivalentClass rdf:resource="https://w3id.org/moo/ont/Activity"/>
+    </rdf:Description>
     
 
 
     <!-- http://www.w3.org/ns/prov#InstantaneousEvent -->
 
 
-    <owl:Class rdf:about="http://www.w3.org/ns/prov#InstantaneousEvent">
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov"/>
-        <rdfs:label>prov:InstantaneousEvent</rdfs:label>
-    </owl:Class>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#InstantaneousEvent">
+        <owl:equivalentClass rdf:resource="https://w3id.org/moo/ont/Event"/>
+    </rdf:Description>
     
 
 
@@ -413,6 +467,36 @@
 
 
     <owl:Class rdf:about="https://schema.org/sdo/Person"/>
+    
+
+
+    <!-- https://w3id.org/moo/ont/Activity -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moo/ont/Activity">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/moo/ont/hasEvent"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/moo/ont/hasEndEvent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/moo/ont/hasStartEvent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Activity</rdfs:label>
+        <skos:definition xml:lang="en">An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.</skos:definition>
+        <prov:wasQuotedFrom>https://www.w3.org/TR/prov-o/#Activity</prov:wasQuotedFrom>
+    </owl:Class>
     
 
 
@@ -533,7 +617,7 @@
 
 
     <owl:Class rdf:about="https://w3id.org/moo/ont/Event">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#InstantaneousEvent"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
         <rdfs:comment>An instantaneous event, or event for short, happens in the world and marks a change in the world, in its activities and in its entities. The term &apos;event&apos; is commonly used in process algebra with a similar meaning. Events represent communications or interactions; they are assumed to be atomic and instantaneous.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
         <rdfs:label>Event</rdfs:label>
@@ -688,17 +772,6 @@
     <owl:Class rdf:about="https://w3id.org/moo/ont/SystemIdentifierType">
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
         <rdfs:label>System Identifier Type</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/moo/ont/Timeentity -->
-
-
-    <owl:Class rdf:about="https://w3id.org/moo/ont/Timeentity">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/moo/ont/"/>
-        <rdfs:label>TimeEntity</rdfs:label>
     </owl:Class>
     
 

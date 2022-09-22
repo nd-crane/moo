@@ -63,6 +63,10 @@ _:genid2 rdf:type <https://schema.org/sdo/Organization> ;
 <http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
 
 
+###  http://www.w3.org/ns/prov#wasQuotedFrom
+<http://www.w3.org/ns/prov#wasQuotedFrom> rdf:type owl:AnnotationProperty .
+
+
 ###  https://schema.org/sdo/affiliation
 <https://schema.org/sdo/affiliation> rdf:type owl:AnnotationProperty .
 
@@ -119,10 +123,26 @@ _:genid2 rdf:type <https://schema.org/sdo/Organization> ;
                                         rdfs:label "has component" .
 
 
+###  https://w3id.org/moo/ont/hasEndEvent
+<https://w3id.org/moo/ont/hasEndEvent> rdf:type owl:ObjectProperty ;
+                                       rdfs:subPropertyOf <https://w3id.org/moo/ont/hasEvent> ;
+                                       rdfs:label "hasEndEvent" .
+
+
+###  https://w3id.org/moo/ont/hasEvent
+<https://w3id.org/moo/ont/hasEvent> rdf:type owl:ObjectProperty ;
+                                    rdfs:range <https://w3id.org/moo/ont/Event> ;
+                                    rdfs:label "hasEvent" .
+
+
 ###  https://w3id.org/moo/ont/hasIdentifier
 <https://w3id.org/moo/ont/hasIdentifier> rdf:type owl:ObjectProperty ;
                                          rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
                                          rdfs:label "hasIdentifier" .
+
+
+###  https://w3id.org/moo/ont/hasPart
+<https://w3id.org/moo/ont/hasPart> rdf:type owl:ObjectProperty .
 
 
 ###  https://w3id.org/moo/ont/hasSiteIdentifier
@@ -132,6 +152,21 @@ _:genid2 rdf:type <https://schema.org/sdo/Organization> ;
                                              rdfs:range <https://w3id.org/moo/ont/SiteIdentifier> ;
                                              rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
                                              rdfs:label "hasSiteIdentifier" .
+
+
+###  https://w3id.org/moo/ont/hasStartEvent
+<https://w3id.org/moo/ont/hasStartEvent> rdf:type owl:ObjectProperty ;
+                                         rdfs:subPropertyOf <https://w3id.org/moo/ont/hasEvent> ;
+                                         rdfs:range <https://w3id.org/moo/ont/Event> ;
+                                         rdfs:label "hasStartEvent" .
+
+
+###  https://w3id.org/moo/ont/hasSubactivity
+<https://w3id.org/moo/ont/hasSubactivity> rdf:type owl:ObjectProperty ;
+                                          rdfs:subPropertyOf <https://w3id.org/moo/ont/hasPart> ;
+                                          rdfs:domain <https://w3id.org/moo/ont/Activity> ;
+                                          rdfs:range <https://w3id.org/moo/ont/Activity> ;
+                                          rdfs:label "hasSubactivity" .
 
 
 ###  https://w3id.org/moo/ont/hasSubsystem
@@ -184,6 +219,10 @@ _:genid2 rdf:type <https://schema.org/sdo/Organization> ;
                                          rdfs:label "occurs at place" .
 
 
+###  https://w3id.org/moo/ont/partOf
+<https://w3id.org/moo/ont/partOf> rdf:type owl:ObjectProperty .
+
+
 ###  https://w3id.org/moo/ont/performsagentrole
 <https://w3id.org/moo/ont/performsagentrole> rdf:type owl:ObjectProperty ;
                                              rdfs:domain <https://w3id.org/moo/ont/eventAgent> ;
@@ -208,6 +247,14 @@ _:genid2 rdf:type <https://schema.org/sdo/Organization> ;
                                               rdfs:label "siteIdentifierType" .
 
 
+###  https://w3id.org/moo/ont/subActivityOf
+<https://w3id.org/moo/ont/subActivityOf> rdf:type owl:ObjectProperty ;
+                                         rdfs:subPropertyOf <https://w3id.org/moo/ont/partOf> ;
+                                         rdfs:domain <https://w3id.org/moo/ont/Activity> ;
+                                         rdfs:range <https://w3id.org/moo/ont/Activity> ;
+                                         rdfs:label "subActivityOf" .
+
+
 #################################################################
 #    Data properties
 #################################################################
@@ -224,28 +271,12 @@ _:genid2 rdf:type <https://schema.org/sdo/Organization> ;
 #    Classes
 #################################################################
 
-###  http://www.opengis.net/ont/geosparql#SpatialObject
-<http://www.opengis.net/ont/geosparql#SpatialObject> rdf:type owl:Class ;
-                                                     rdfs:comment "Anything spatial (having or being a shape, position or an extent)." ;
-                                                     rdfs:label "geosparql:SpatialObject" .
-
-
-###  http://www.w3.org/2006/time#TemporalEntity
-<http://www.w3.org/2006/time#TemporalEntity> rdf:type owl:Class ;
-                                             rdfs:label "time:TemporalEntity" .
-
-
-###  http://www.w3.org/ns/prov#Agent
-<http://www.w3.org/ns/prov#Agent> rdf:type owl:Class ;
-                                  rdfs:comment "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity." ;
-                                  rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
-                                  rdfs:label "prov:Agent" .
+###  http://www.w3.org/ns/prov#Activity
+<http://www.w3.org/ns/prov#Activity> owl:equivalentClass <https://w3id.org/moo/ont/Activity> .
 
 
 ###  http://www.w3.org/ns/prov#InstantaneousEvent
-<http://www.w3.org/ns/prov#InstantaneousEvent> rdf:type owl:Class ;
-                                               rdfs:isDefinedBy <http://www.w3.org/ns/prov> ;
-                                               rdfs:label "prov:InstantaneousEvent" .
+<http://www.w3.org/ns/prov#InstantaneousEvent> owl:equivalentClass <https://w3id.org/moo/ont/Event> .
 
 
 ###  https://schema.org/sdo/Organization
@@ -254,6 +285,26 @@ _:genid2 rdf:type <https://schema.org/sdo/Organization> ;
 
 ###  https://schema.org/sdo/Person
 <https://schema.org/sdo/Person> rdf:type owl:Class .
+
+
+###  https://w3id.org/moo/ont/Activity
+<https://w3id.org/moo/ont/Activity> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.w3.org/2006/time#TemporalEntity> ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <https://w3id.org/moo/ont/hasEvent> ;
+                                                      owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                    ] ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <https://w3id.org/moo/ont/hasEndEvent> ;
+                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                    ] ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <https://w3id.org/moo/ont/hasStartEvent> ;
+                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                    ] ;
+                                    rdfs:label "Activity"@en ;
+                                    <http://www.w3.org/2004/02/skos/core#definition> "An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities."@en ;
+                                    <http://www.w3.org/ns/prov#wasQuotedFrom> "https://www.w3.org/TR/prov-o/#Activity" .
 
 
 ###  https://w3id.org/moo/ont/Agent
@@ -329,7 +380,7 @@ _:genid2 rdf:type <https://schema.org/sdo/Organization> ;
 
 ###  https://w3id.org/moo/ont/Event
 <https://w3id.org/moo/ont/Event> rdf:type owl:Class ;
-                                 rdfs:subClassOf <http://www.w3.org/ns/prov#InstantaneousEvent> ;
+                                 rdfs:subClassOf <http://www.w3.org/2006/time#TemporalEntity> ;
                                  rdfs:comment "An instantaneous event, or event for short, happens in the world and marks a change in the world, in its activities and in its entities. The term 'event' is commonly used in process algebra with a similar meaning. Events represent communications or interactions; they are assumed to be atomic and instantaneous." ;
                                  rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
                                  rdfs:label "Event" .
@@ -428,13 +479,6 @@ _:genid2 rdf:type <https://schema.org/sdo/Organization> ;
 <https://w3id.org/moo/ont/SystemIdentifierType> rdf:type owl:Class ;
                                                 rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
                                                 rdfs:label "System Identifier Type" .
-
-
-###  https://w3id.org/moo/ont/Timeentity
-<https://w3id.org/moo/ont/Timeentity> rdf:type owl:Class ;
-                                      rdfs:subClassOf <http://www.w3.org/2006/time#TemporalEntity> ;
-                                      rdfs:isDefinedBy <https://w3id.org/moo/ont/> ;
-                                      rdfs:label "TimeEntity" .
 
 
 ###  https://w3id.org/moo/ont/eventAgent
